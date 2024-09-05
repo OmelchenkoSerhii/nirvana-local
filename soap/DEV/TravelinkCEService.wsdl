@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.opentravel.org/OTA/2003/05" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.opentravel.org/OTA/2003/05/Imports">
+      <xsd:import schemaLocation="TravelinkCEService.xsd" namespace="http://www.opentravel.org/OTA/2003/05"/>
+      <xsd:import schemaLocation="TravelinkCEService_1.xsd" namespace="http://schemas.comtec-europe.net/tlce/2011/03"/>
+      <xsd:import schemaLocation="TravelinkCEService_2.xsd" namespace="http://microsoft.com/wsdl/types/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOTATravelinkService_ServiceInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceInformation"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_ServiceInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceInformationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_Ping"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_PingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AirLowFareSearchGrouped_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AirLowFareSearchGrouped"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AirLowFareSearchGrouped_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AirLowFareSearchGroupedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AirLowFareSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AirLowFareSearch"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AirLowFareSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AirLowFareSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelAvail_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelAvail"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelAvail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelAvailResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelErrata_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelErrata"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelErrata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelErrataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelExternalErrata_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelExternalErrata"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelExternalErrata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelExternalErrataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelInfo"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HotelInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HotelInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AddDynamicPkgToQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AddDynamicPkgToQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AddDynamicPkgToQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AddDynamicPkgToQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_VehLocSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_VehLocSearch"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_VehLocSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_VehLocSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_VehAvailRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_VehAvailRate"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_VehAvailRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_VehAvailRateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_VehPriceOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_VehPriceOptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_VehPriceOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_VehPriceOptionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_TransferAvail_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_TransferAvail"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_TransferAvail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_TransferAvailResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_ExtraAvail_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_ExtraAvail"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_ExtraAvail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_ExtraAvailResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_SupplementsAvail_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_SupplementsAvail"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_SupplementsAvail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_SupplementsAvailResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_CreateQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_CreateQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_CreateQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_CreateQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AddToQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AddToQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_AddToQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_AddToQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_DeleteFromQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_DeleteFromQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_DeleteFromQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_DeleteFromQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_ViewQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_ViewQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_ViewQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_ViewQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_CloneQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_CloneQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_CloneQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_CloneQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_Booking_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_Booking"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_Booking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_BookingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_3DSecure_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_3DSecure"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_3DSecure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_3DSecureResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HBSIHotelResConfirmation_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HBSIHotelResConfirmation"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_HBSIHotelResConfirmation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_HBSIHotelResConfirmationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_FareUpgradeSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_FareUpgradeSearch"/>
+  </wsdl:message>
+  <wsdl:message name="IOTATravelinkService_OTA_FareUpgradeSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTA_FareUpgradeSearchResponse"/>
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IOTATravelinkService">
+    <wsdl:operation name="ServiceInformation">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/ServiceInformation" message="tns:IOTATravelinkService_ServiceInformation_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/ServiceInformationResponse" message="tns:IOTATravelinkService_ServiceInformation_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_Ping">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_Ping" message="tns:IOTATravelinkService_OTA_Ping_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_PingResponse" message="tns:IOTATravelinkService_OTA_Ping_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AirLowFareSearchGrouped">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AirLowFareSearchGrouped" message="tns:IOTATravelinkService_OTA_AirLowFareSearchGrouped_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AirLowFareSearchGroupedResponse" message="tns:IOTATravelinkService_OTA_AirLowFareSearchGrouped_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AirLowFareSearch">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AirLowFareSearch" message="tns:IOTATravelinkService_OTA_AirLowFareSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AirLowFareSearchResponse" message="tns:IOTATravelinkService_OTA_AirLowFareSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelAvail">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelAvail" message="tns:IOTATravelinkService_OTA_HotelAvail_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelAvailResponse" message="tns:IOTATravelinkService_OTA_HotelAvail_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelErrata">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelErrata" message="tns:IOTATravelinkService_OTA_HotelErrata_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelErrataResponse" message="tns:IOTATravelinkService_OTA_HotelErrata_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelExternalErrata">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelExternalErrata" message="tns:IOTATravelinkService_OTA_HotelExternalErrata_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelExternalErrataResponse" message="tns:IOTATravelinkService_OTA_HotelExternalErrata_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelInfo">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelInfo" message="tns:IOTATravelinkService_OTA_HotelInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelInfoResponse" message="tns:IOTATravelinkService_OTA_HotelInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AddDynamicPkgToQuote">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AddDynamicPkgToQuote" message="tns:IOTATravelinkService_OTA_AddDynamicPkgToQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AddDynamicPkgToQuoteResponse" message="tns:IOTATravelinkService_OTA_AddDynamicPkgToQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_VehLocSearch">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehLocSearch" message="tns:IOTATravelinkService_OTA_VehLocSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehLocSearchResponse" message="tns:IOTATravelinkService_OTA_VehLocSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_VehAvailRate">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehAvailRate" message="tns:IOTATravelinkService_OTA_VehAvailRate_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehAvailRateResponse" message="tns:IOTATravelinkService_OTA_VehAvailRate_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_VehPriceOptions">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehPriceOptions" message="tns:IOTATravelinkService_OTA_VehPriceOptions_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehPriceOptionsResponse" message="tns:IOTATravelinkService_OTA_VehPriceOptions_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_TransferAvail">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_TransferAvail" message="tns:IOTATravelinkService_OTA_TransferAvail_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_TransferAvailResponse" message="tns:IOTATravelinkService_OTA_TransferAvail_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_ExtraAvail">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_ExtraAvail" message="tns:IOTATravelinkService_OTA_ExtraAvail_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_ExtraAvailResponse" message="tns:IOTATravelinkService_OTA_ExtraAvail_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_SupplementsAvail">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_SupplementsAvail" message="tns:IOTATravelinkService_OTA_SupplementsAvail_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_SupplementsAvailResponse" message="tns:IOTATravelinkService_OTA_SupplementsAvail_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_CreateQuote">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_CreateQuote" message="tns:IOTATravelinkService_OTA_CreateQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_CreateQuoteResponse" message="tns:IOTATravelinkService_OTA_CreateQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AddToQuote">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AddToQuote" message="tns:IOTATravelinkService_OTA_AddToQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AddToQuoteResponse" message="tns:IOTATravelinkService_OTA_AddToQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_DeleteFromQuote">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_DeleteFromQuote" message="tns:IOTATravelinkService_OTA_DeleteFromQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_DeleteFromQuoteResponse" message="tns:IOTATravelinkService_OTA_DeleteFromQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_ViewQuote">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_ViewQuote" message="tns:IOTATravelinkService_OTA_ViewQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_ViewQuoteResponse" message="tns:IOTATravelinkService_OTA_ViewQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_CloneQuote">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_CloneQuote" message="tns:IOTATravelinkService_OTA_CloneQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_CloneQuoteResponse" message="tns:IOTATravelinkService_OTA_CloneQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_Booking">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_Booking" message="tns:IOTATravelinkService_OTA_Booking_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_BookingResponse" message="tns:IOTATravelinkService_OTA_Booking_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_3DSecure">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_3DSecure" message="tns:IOTATravelinkService_OTA_3DSecure_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_3DSecureResponse" message="tns:IOTATravelinkService_OTA_3DSecure_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HBSIHotelResConfirmation">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HBSIHotelResConfirmation" message="tns:IOTATravelinkService_OTA_HBSIHotelResConfirmation_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HBSIHotelResConfirmationResponse" message="tns:IOTATravelinkService_OTA_HBSIHotelResConfirmation_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_FareUpgradeSearch">
+      <wsdl:input wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_FareUpgradeSearch" message="tns:IOTATravelinkService_OTA_FareUpgradeSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_FareUpgradeSearchResponse" message="tns:IOTATravelinkService_OTA_FareUpgradeSearch_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

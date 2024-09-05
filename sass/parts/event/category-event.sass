@@ -1,0 +1,43 @@
+.category-event
+    &__list
+        .container
+            +max-screen($breakpoint-sm)
+                //padding-left: 0
+                //padding-right: 0
+            .event-card__img-block-wrapper
+                +max-screen($breakpoint-sm)
+                    max-width: 100%
+        &-inner
+            width: 100%
+            max-width: 997px
+            margin: auto
+            margin-top: -100px
+            display: flex
+            flex-direction: column
+        &-item
+            //transform: translateY(-100px)
+            background-color: $color-bg-light
+            min-height: 300px
+            box-sizing: content-box
+            position: relative
+            z-index: 1
+            border: none
+    &__filters
+        input
+            background-color: $color-light-orange
+            border: 1px solid white
+            font-size: 15px!important
+            line-height: normal
+            font-family: Chivo,sans-serif
+            padding: 20px 65px 20px 15px!important
+            height: 57px!important
+            color: white
+            outline: none
+            &::placeholder
+                color: white
+        label
+            font-size: 14px
+            font-weight: 700
+        &-inner
+            position: relative
+            z-index: 5

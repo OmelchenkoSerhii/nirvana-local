@@ -1,0 +1,44 @@
+.single-event
+    &__trip
+        &-inner
+            display: grid
+            grid-template-columns: repeat(2,minmax(300px, 480px))
+            grid-auto-rows: 590px
+            gap: 220px 100px
+            +max-screen($breakpoint-lg)
+                grid-auto-rows: calcFluidSize(420, 500, $breakpoint-md, $breakpoint-lg)
+                column-gap: 60px
+            +max-screen($breakpoint-md)
+                display: flex
+                flex-direction: column
+                gap: 50px
+        &-item
+            .content-block
+                position: absolute
+                bottom: -50px
+                right: -100px
+                +max-screen($breakpoint-lg)
+                    right: -60px
+                +max-screen($breakpoint-md)
+                    transform: translateZ(1px)
+                    max-width: 95%
+                    margin: -15% auto 0 auto
+                    position: initial
+            &:nth-of-type(2n + 2)
+                transform: translateY(-270px)
+                +max-screen($breakpoint-lg)
+                    transform: translateY(-226px)
+                +max-screen($breakpoint-md)
+                    transform: unset
+                .content-block
+                    right: unset
+                    left: -100px
+                    +max-screen($breakpoint-lg)
+                        left: -60px
+    .button--scroll-down
+      position: fixed
+      bottom: 15px
+      left: 0
+      right: 0
+      margin: auto
+      animation: scale-up-center 800ms cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate both

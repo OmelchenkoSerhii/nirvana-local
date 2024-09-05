@@ -1,0 +1,193 @@
+.filter
+    &-dropdown-list
+        max-width: 215px
+        padding-top: 40px
+        .options
+
+        .options-child
+            display: none
+            padding-left: 20px
+
+        .option
+            &__label
+                position: relative
+                cursor: pointer
+            &__checkbox
+                opacity: 0
+                left: 0
+                width: 0
+                height: 0
+                position: absolute
+            &__text
+                color: #5c6278
+                font-size: 10.5px
+                font-weight: 900
+                letter-spacing: 1.5px
+                line-height: 15px
+                text-transform: uppercase
+                transition: 0.3s
+                &:hover
+                    color: #FFF
+            .option__checkbox:checked + .option__text
+                color: #FFF
+
+            &__header
+                display: flex
+                justify-content: space-between
+                align-items: center
+            &-toggle
+                cursor: pointer
+                display: inline-block
+                width: 12px
+                height: 12px
+                background-image: url("../assets/images/icon-slider-arrow.svg")
+                background-size: 65% 65%
+                background-repeat: no-repeat
+                background-position: center
+                transform: rotate(90deg)
+                transition: 0.3s
+            &.opened
+                .option-toggle
+                    transform: rotate(270deg)
+    &-dropdown
+        &__inner
+            display: flex
+            height: 42px
+            border: 1px solid #FFF
+            position: relative
+        &__title
+            padding: 0 15px
+            border-right: 1px solid #fff
+            color: #5C6278
+            font-size: 13px
+            display: flex
+            flex-direction: column
+            justify-content: center
+        &__list
+            position: relative
+            padding: 0 15px
+            width: 100%
+            z-index: 5
+            &__clear
+                position: absolute
+                top: 13px
+                right: 13px
+                width: 16px
+                height: 16px
+                background: #f47920
+                z-index: 2
+                cursor: pointer
+                img
+                    width: 100%
+                    height: auto
+            &__title
+                font-size: 13px
+                line-height: 18px
+                display: flex
+                align-items: center
+                justify-content: space-between
+                height: 100%
+                cursor: pointer
+                min-width: 100px
+                &:after
+                    content: ''
+                    display: inline-block
+                    width: 16px
+                    height: 16px
+                    background-image: url("../assets/images/icon-btn-arrow.svg")
+                    background-size: 50% 50%
+                    background-repeat: no-repeat
+                    background-position: center
+                    transform: rotate(90deg)
+                    transition: 0.3s
+                &.opened
+                    &:after
+                        transform: rotate(270deg)
+            .options
+                position: absolute
+                top: 100%
+                left: 0
+                width: 100%
+                display: none
+                padding: 15px
+                background-color: $color-dark
+            .option
+                color: #FFF
+                &__label
+                    position: relative
+                    cursor: pointer
+                &__checkbox
+                    opacity: 0
+                    left: 0
+                    width: 0
+                    height: 0
+                    position: absolute
+                &__text
+                    font-size: 13px
+                    line-height: 18px
+                    opacity: 0.8
+                    transition: 0.3s
+                .option__checkbox:checked + .option__text
+                    opacity: 1
+    &-search
+        &__form
+            display: flex
+            position: relative
+        &__input
+            width: 100%
+            -webkit-appearence: none
+            background: transparent
+            border: 2px solid #2C2F7B
+            border-radius: 0
+            font-size: 16px
+            padding: 12px 20px
+            height: 54px
+            color: #fff
+            transition: 0.3s
+            &:focus
+                color: #fff
+            &::placeholder
+                color: rgba(255, 255, 255, 0.7)
+        &__submit
+            -webkit-appearence: none
+            position: absolute
+            font-size: 0
+            top: 50%
+            transform: translateY(-50%)
+            right: 0px
+            border: 0
+            cursor: pointer
+            background: transparent
+            padding: 0
+            color: #fff
+            text-transform: uppercase
+            font-weight: 600
+            font-size: 16px
+            padding: 0 15px
+            font-family: $font-family-secondary
+    &-list
+        .options
+           display: flex
+           flex-wrap: wrap
+           margin: -6px -12px
+        .option
+            padding: 6px 12px
+            &__label
+                position: relative
+                cursor: pointer
+            &__checkbox
+                opacity: 0
+                left: 0
+                width: 0
+                height: 0
+                position: absolute
+            &__text
+                cursor: pointer
+                font-size: 13px
+                line-height: 18px
+                opacity: 0.8
+                transition: 0.3s
+                text-transform: uppercase
+            .option__checkbox:checked + .option__text
+                opacity: 1
+    

@@ -1,0 +1,31 @@
+.page-template-template-contact-us
+    .contact-us
+        &__contents
+            display: flex
+            flex-direction: column
+            gap: 35px
+        &__content
+            display: grid
+            grid-template-areas: 'icon title' '. text'
+            align-items: center
+            grid-auto-columns: max-content
+            column-gap: 15px
+            &-icon
+                grid-area: icon
+                display: flex
+            &-title
+                grid-area: title
+            &-text
+                margin-top: 10px
+                grid-area: text
+                +max-screen($breakpoint-md)
+                    font-size: 16px
+        &__map
+            margin-top: -300px
+            +max-screen($breakpoint-xl)
+                margin-top: -20%
+            +max-screen($breakpoint-md)
+                margin-top: -50px
+            +max-screen($breakpoint-xs)
+                margin-top: -25px
+            

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ValidateCreditCardRS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CreditCard" type="ValidatedCardType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidatedCardType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CardNumber" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ValidCard" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="CardDetails" type="CardDetailsType"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Validation" type="ValidationType"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="CardErrorsType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CardDetailsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SchemeName" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="MatchingReceipts" type="ArrayOfValidarteCardReceiptType"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PanLength" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ExpiryDateType" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="IssueNoLen" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDateType" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SupportedCard" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfValidarteCardReceiptType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Receipt" type="ValidarteCardReceiptType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidarteCardReceiptType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiptName" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiptType" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Commission" type="xs:double"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="CommissionCap" type="xs:double"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="IsCard" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="IsCheque" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="IsRefund" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Source" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorNo" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="CardNumber" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="CardLength" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ExpiryDate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Error" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="IssueNo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Error" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CSC" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="GenError" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CardErrorsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Error" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ErrorNo" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

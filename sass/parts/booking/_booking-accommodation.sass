@@ -1,0 +1,744 @@
+.accommodations
+    .js-change-dates
+        position: relative
+        z-index: 4
+    &__list
+        .icon-bookmark
+            z-index: 3
+
+    &-nirvana
+        .with-bedbanks &
+            position: relative
+            padding-top: 20px
+            &:before
+                pointer-events: none
+                content: ''
+                position: absolute
+                top: 0
+                left: -50px
+                width: 100vw
+                height: 100%
+                background: #F47920
+                +max-screen(1200px)
+                    left: -20px
+    &-bedbanks
+        position: relative
+        padding-top: 20px
+        .content-block
+            position: relative
+            z-index: 3
+        &:before
+            pointer-events: none
+            content: ''
+            position: absolute
+            top: 0
+            left: -50px
+            width: 100vw
+            height: 100%
+            background: #dedede
+            +max-screen(1200px)
+                left: -20px
+    &__item
+        position: relative
+        +max-screen($breakpoint-md)
+            flex-wrap: wrap
+        &-image-wrapper
+            max-width: 265px
+            width: 100%
+            flex-shrink: 0
+        &-additional-content
+            flex-shrink: 0
+            align-items: flex-end
+        &-bg-sold-out
+            position: absolute
+            z-index: 2
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            background-color: transparentize($color-light, 0.25)
+            pointer-events: none
+        &-image-wrapper
+            +max-screen($breakpoint-md)
+                margin: auto
+        &-image-gallery
+            line-height: 0
+            .slick-dots
+                display: flex
+                justify-content: center
+                margin-left: -5px
+                margin-right: -5px
+                padding-bottom: 15px
+                padding-top: 10px
+                position: absolute
+                bottom: 10px
+                left: 50%
+                transform: translateX(-50%)
+                li
+                    padding-left: 5px
+                    padding-right: 5px
+                    display: flex
+                    button
+                        font-size: 0
+                        width: 7px
+                        height: 7px
+                        border-radius: 50%
+                        border: none
+                        background: #fff
+                    &.slick-active
+                        button
+                            background: #f47920
+
+        &-contact
+            position: relative
+            z-index: 4
+            a
+                transition: 0.3s
+                &:hover
+                    color: $color-light-orange
+    &-map-btn
+        background-image: url(../assets/images/map-bg.jpeg)
+        .button
+            span
+                color: #fff
+            img
+                margin-left: 8px
+
+.sort-dropdown
+    position: relative
+    font-size: 16px
+    z-index: 5
+    &__header
+        display: flex
+        align-items: center
+    &__button
+        cursor: pointer
+    &__content
+        position: absolute
+        top: 100%
+        left: 40px
+        margin-top: 15px
+        background: #fff
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1)
+        border-radius: 10px
+        display: flex
+        flex-direction: column
+        li
+            padding: 15px 10px
+            transition: background 0.3s
+            cursor: pointer
+            white-space: nowrap
+            &:hover, &.active
+                background: transparentize(#003CC7, 0.96)
+                font-weight: 600
+    &__arrow
+        width: 8px
+        height: 8px
+        min-width: 8px
+        position: relative
+        transition: 0.3s
+        .opened &
+            transform: rotate(-180deg)
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: contain
+
+
+.accommodation
+    .hotel-gallery
+        //margin-left: -50px
+        .slick-slide
+            height: auto
+        .slick-list
+            //padding-left: 50px
+            overflow: visible
+            .slick-slide
+                
+                
+        .slider-arrows
+            .slick-arrow
+                right: 30px
+                &::after
+                    margin-left: 0
+                &.button--arrow-left
+                    left: 30px
+    &__location-map
+        position: relative
+
+.hotel-similar-list,
+.hotel-rooms-list
+    position: relative
+    background: rgba(0,60,199,.04)
+    margin: 0 -20px
+    padding-left: 50px
+    padding-right: 50px
+    &__list
+        margin-left: -50px
+        .slick-list
+            padding-left: 50px
+            .slick-slide
+                padding: 15px 10px
+    .slider-arrows
+        .slick-arrow
+            right: 9px
+            margin: 0
+            margin-top: 8%
+            &.button--arrow-left
+                left: 10px
+    &__item
+        box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.1)
+
+.hotel-rooms-list
+    z-index: 1
+    .icon-bookmark
+        position: absolute
+        right: 20px
+        top: 0px
+    .slider-arrows
+        .slick-arrow
+            margin-top: 14.5%
+            right: 25px
+            z-index: 3
+            &.button--arrow-left
+                left: 25px
+    &.js-bedbanks-rooms-search
+        .slider-arrows
+            display: flex
+            justify-content: flex-end
+            gap: 12px
+            padding-right: 8px
+            .slick-arrow
+                position: relative
+                margin-top: 0
+                right: 0
+                top: 0
+                z-index: 3
+                &.button--arrow-left
+                    left: 0
+    .slick-track
+        display: flex !important
+    .slick-slide
+        height: inherit !important
+        > div
+            height: 100% !important
+    .slick-list
+        overflow: visible
+    &__list
+        position: relative
+        z-index: 3
+    &__item
+        position: relative
+        height: 100%
+        display: grid !important
+        grid-template-rows: max-content
+        &-image
+            padding-bottom: 64%
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+        &--bedbank
+            height: 100%
+            display: block!important
+            .hotel-rooms-list__item-inner
+                height: 100%
+    &__meta-info
+        +max-screen(420px)
+            width: 100%
+            margin-bottom: 10px
+    .hotel-rooms-qtt-select
+        max-width: 150px
+        width: 100%
+        position: relative
+        margin-left: auto
+        &__dropdown
+            z-index: -1
+            visibility: hidden
+            max-height: 140px
+            overflow: auto
+            opacity: 0
+            transition: $default-transition
+            width: 100%
+            border: none
+            outline: none
+            background-color: $color-bg-light
+            font-size: 14px
+            line-height: normal
+            appearance: none
+            position: absolute
+            padding: 10px 0
+        &.active
+            .hotel-rooms-qtt-select__dropdown
+                z-index: 1
+                visibility: visible
+                opacity: 1
+        li
+            cursor: pointer
+            margin-left: 10px
+            margin-right: 10px
+            padding: 15px 10px
+            color: $color-dark
+            font-size: 16px
+            line-height: normal
+            font-weight: 400
+            transition: $default-transition
+            &:hover
+                font-weight: 700
+                background-color: transparentize($color-blue, 0.96)
+        &__header
+            display: inline-flex
+            width: 100%
+            align-items: center
+            cursor: pointer
+            color: $color-light
+            background-color: $color-bg-dark
+            padding: 0 20px
+            height: 50px
+            position: relative
+            font-size: 14px
+            line-height: normal
+            font-weight: 700
+            text-transform: uppercase
+            &::after
+                content: ''
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1.6499' y='3.2998' width='7' height='2.33333' transform='rotate(45 1.6499 3.2998)' fill='%23D8D8D8'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.89941 4.9502L4.94967 9.89994L3.29975 8.25003L8.2495 3.30028L9.89941 4.9502Z' fill='%23D8D8D8'/%3E%3C/svg%3E%0A")
+                background-repeat: no-repeat
+                background-size: contain
+                width: 10px
+                height: 10px
+                display: block
+                position: absolute
+                right: 20px
+                top: 0
+                bottom: 0
+                margin: auto
+            &:hover
+                ~ .hotel-nights
+                    z-index: 1
+                    visibility: visible
+                    opacity: 1
+            &--sold-out
+                display: flex
+                align-items: center
+                justify-content: center
+                height: 50px
+                max-width: 111px
+                width: 100%
+                font-weight: 700
+                text-transform: uppercase
+                font-size: 14px
+                margin-left: auto
+    &__supplements
+        padding: 15px
+        background-color: transparentize($color-blue, 0.96)
+        label
+            cursor: pointer
+
+    .button--dark-transparent
+        padding: 0
+        height: 50px
+    .bg--sold-out
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+        background: transparentize($color-light, 0.25)
+    button[type="submit"]
+        max-width: 200px
+        width: 100%
+        padding: 0
+        height: 50px
+
+.final-room
+    width: 350px
+    height: 50px
+    text-align: center
+    text-transform: uppercase
+    transform: rotate(-45deg)
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $color-light-orange
+    color: $color-light
+    top: 20px
+    left: -115px
+    font-weight: 700
+    font-size: 14px
+    line-height: normal
+.final-room-badge
+    height: 35px
+    text-align: center
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $color-light-orange
+    color: $color-light
+    font-weight: 700
+    font-size: 14px
+    line-height: normal
+    padding: 0 20px
+
+.book-accommodation
+    &__container
+        max-width: 700px
+        width: 100%
+        margin-left: auto
+        margin-right: auto
+    &__back-btn
+        cursor: pointer
+    &__content-info
+        > .image-wrapper
+            max-width: 200px
+            width: 100%
+    &__supplements
+        background-color: transparentize($color-blue, 0.96)
+        padding: 10px
+    hr
+        backgorund-color: transparentize($color-bg-dark, 0.75)
+    &__content-select
+        width: 100%
+        .dropdown
+            width: 100%
+            position: relative
+            &__header
+                width: 100%
+                height: 50px
+                border: 1px solid transparentize($color-bg-dark, 0.4)
+                border-radius: 5px
+                padding: 15px
+                font-size: 16px
+                line-height: normal
+                color: $color-dark
+                margin-top: 5px
+                cursor: pointer
+                padding-right: 35px
+                background-image: url(../assets/images/dropdown-arrow.svg)
+                background-size: 10px 10px
+                background-position: right 15px center
+                background-repeat: no-repeat
+            &__content
+                display: none
+                position: absolute
+                top: 100%
+                left: 0
+                width: 100%
+                background: #fff
+                border-radius: 5px
+                padding: 5px
+                z-index: 2
+                box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.1)
+                li
+                    padding: 5px
+                    cursor: pointer
+                    &:hover
+                        background-color: transparentize($color-bg-dark, 0.96)
+    &__content-type-input
+        min-width: 240px
+        +max-screen($breakpoint-md)
+            min-width: 130px
+        +max-screen($breakpoint-sm)
+            width: 100%
+    &__content-adults
+        &-item
+            display: flex
+            gap: 10px
+            align-items: flex-end
+            margin-top: 20px
+        &-index,
+        &-remove
+            width: 50px
+            height: 50px
+            background-color: transparentize($color-bg-dark, 0.96)
+            font-weight: 700
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: 16px
+            line-height: normal
+            border-radius: 5px
+            flex-shrink: 0
+        &-input
+            label
+                width: 100%
+                input
+                    width: 100%
+                    height: 50px
+                    border: 1px solid transparentize($color-bg-dark, 0.4)
+                    border-radius: 5px
+                    padding: 15px
+                    font-family: $font-family-base
+                    font-size: 16px
+                    line-height: normal
+                    color: $color-dark
+                    margin-top: 5px
+        select
+            -webkit-appearance: none
+            width: 80px
+            min-width: 80px
+            width: 100%
+            height: 50px
+            border: 1px solid transparentize($color-bg-dark, 0.4)
+            border-radius: 5px
+            padding: 15px
+            padding-right: 35px
+            font-size: 16px
+            line-height: normal
+            color: $color-dark
+            margin-top: 5px
+            font-family: $font-family-base
+            -webkit-appearance: none
+           
+            background-image: url(../assets/images/dropdown-arrow.svg)
+            background-size: 10px 10px
+            background-position: right 15px center
+            background-repeat: no-repeat
+            cursor: pointer
+    &__form
+        position: relative
+        .primary-buttons
+            .button
+                max-width: 200px
+                width: 100%
+                padding: 16px 10px
+        &-loading
+            position: fixed
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 5
+            background: transparentize($color-bg-light, 0.5)
+            img
+                position: absolute
+                top: 50%
+                left: 50%
+                width: 100px
+                height: 100px
+                transform: translate3d(-50%,-50%,0)
+                
+            
+.booking
+    label
+        cursor: pointer
+    .checkbox-wrapper
+        position: relative
+        input[type="checkbox"]
+            appearance: none
+            border-radius: 50%
+            border: 1px solid $color-light-orange
+            width: 20px
+            height: 20px
+            flex-shrink: 0
+            display: block
+            &:checked
+                ~ .checkbox-active
+                    opacity: 1
+            ~ .checkbox-active
+                position: absolute
+                transition: 0.3s
+                opacity: 0
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                margin: auto
+                width: 10px
+                height: 10px
+                border-radius: 50%
+                background-color: $color-light-orange
+    &__col-content
+        .tml-login
+            max-width: 500px
+            margin-left: auto
+            margin-right: auto
+            +max-screen($breakpoint-sm)
+                padding: 15px
+.hotel-nights
+    position: relative
+    z-index: 2
+    &__notice
+        background: $color-light-orange
+        color: $color-light
+        text-align: center
+    &-form
+        color: $color-dark
+        background: transparentize($color-light-orange, 0.9)
+        border: 1px solid $color-light-orange
+        .datepicker
+            &__nights
+                bottom: -17px
+
+.accommodation-amenities
+    &__icon
+      img
+        max-width: 20px
+        height: auto
+        object-fit: contain
+    ul
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        column-gap: 15px
+        row-gap: 20px
+        +max-screen($breakpoint-lg)
+            grid-template-columns: repeat(3, 1fr)
+        +max-screen($breakpoint-md)
+            grid-template-columns: repeat(2, 1fr)
+
+.page-template-template-api-accommodation .header-booking#header .header-booking__main
+    padding-right: 25px
+
+.accommodations__item
+  //height: 265px
+    +max-screen($breakpoint-md)
+        flex-direction: column
+        height: auto
+    &-image-wrapper
+        +max-screen($breakpoint-md)
+            margin-left: auto
+            margin-right: auto
+            padding-top: 30px
+
+    
+.accommodations__item__inclusions
+    //display: flex
+    //flex-wrap: wrap
+    width: 100%
+    margin: -5px
+    li
+        //width: 50%
+        padding: 5px
+        .icon
+            margin-right: 10px
+    &__inner
+        display: flex
+        align-items: center
+        //padding: 16px
+        //background: transparentize(#003CC7, 0.96)
+        text-transform: uppercase
+        font-weight: 600
+        font-size: 12px
+        line-height: 12px
+        color: #000C26
+        &:before
+            content: ''
+            min-width: 8px
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background: $color-light-orange
+            margin-right: 12px
+
+.accommodations__item-content
+  &-description
+    p
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      /*! autoprefixer: off */
+      -webkit-box-orient: vertical
+      overflow: hidden
+
+.accommodations__item-additional-content
+  width: 180px
+  +max-screen($breakpoint-lg)
+    width: 100%
+    .accommodations__item-contact
+      white-space: normal !important
+    .icon-bookmark-list
+      position: absolute
+      top: 0
+      right: 0
+
+// Accommodation Adaptive
+.page-template-template-api-accommodation
+  +max-screen($breakpoint-lg)
+    .hotel-rooms-list .hotel-rooms-qtt-select
+      // display: flex
+      // align-items: flex-end
+      // max-width: 110px
+  +max-screen(1200px)
+    .header-booking#header .header-booking__main
+      max-width: 100%
+    .accommodation
+      
+  +max-screen($breakpoint-md)
+    
+    .booking__col-summary
+      order: 3
+      width: 100%
+    .header-booking#header .header-booking__main
+        max-width: 100%
+    .datepicker
+      width: 100%
+      .order-form__field
+        width: 50%
+    .order-form__field
+      width: 100%
+      input
+        width: 100%
+    .order-form
+      padding-right: 10px
+  +max-screen($breakpoint-sm)
+    .header-booking#header .header-booking__main
+      padding-left: 20px
+  +max-screen($breakpoint-sm)
+    .header-booking__main__accom
+      flex-wrap: wrap
+      gap: 20px
+      .header-booking__main__title
+        width: calc(100% - 80px)
+    .accommodation
+      
+    .datepicker
+      .order-form__field
+        width: 100% !important
+  +max-screen($breakpoint-xs)
+    .accommodation .hotel-gallery .slider-arrows .slick-arrow
+      width: 40px
+      height: 40px
+      right: 0
+    .accommodation .hotel-gallery .slider-arrows .slick-arrow.button--arrow-left
+      left: 0
+
+.page-template-template-api-book-accommodation, .page-template-template-api-book-package
+  +max-screen($breakpoint-lg)
+    .header-booking#header .header
+      //flex-direction: column
+      align-items: center
+    .header-booking#header .header-booking__main
+      max-width: 100%
+    .booking__col-content
+  +max-screen($breakpoint-md)
+    .header-booking#header .header-booking__main
+      max-width: 100%
+    .booking__col-content
+    .booking__col-summary
+      order: 3
+      width: 100%
+  +max-screen($breakpoint-sm)
+    .book-accommodation__content-adults-item
+      flex-direction: column
+      align-items: flex-start
+    .book-accommodation__content-adults-input,
+    .book-accommodation__content-adults-input select,
+    .book-accommodation__content-type-input select,
+    .book-accommodation__content-adults-input input
+      width: 100%
+    .book-accommodation__content-info
+      flex-direction: column
+      align-items: center
+      row-gap: 30px
+    .header-booking__main__accom
+      flex-wrap: wrap
+      gap: 20px
+      .header-booking__main__title
+        width: calc(100% - 80px)

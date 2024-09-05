@@ -1,0 +1,397 @@
+#header
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 100
+    width: 100%
+    background-color: $color-bg-light
+    transition: 0.3s
+    // mix-blend-mode: hard-light
+    .header__transparent &
+        background-color: transparent
+        .header__transparent--bg
+            opacity: 0.6
+            top: 0
+            left: 0
+            background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5970763305322129) 50%)
+    .header__transparent--bg
+        .header__dark &
+            background: none
+    .header__transparent.scrolled &,.header-active &
+        background-color: transparent
+    .header__dark &, .header__dark.scrolled.sub-menu--active &
+        background-color: $color-bg-dark
+    .admin-bar &
+        top: 32px
+        +max-screen(782px)
+            top: 46px
+    .admin-bar.scrolled &
+        +max-screen($breakpoint-md)
+            top: 0
+    &.header--hidden
+        transform: translateY(-100%)
+    .sub-menu--active &
+        height: 80%
+
+.header
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    z-index: 100
+    //background-color: $color-primary
+    padding-top: 50px
+    padding-bottom: 100px
+    transition: 0.3s
+    +max-screen(1100px)
+        padding-top: 15px
+        padding-bottom: 15px
+    +max-screen($breakpoint-sm)
+        //flex-direction: column
+        padding-top: 10px
+        padding-bottom: 10px
+    body:not(.header__transparent):not(.header__dark) &
+        padding-top: 45px
+        padding-bottom: 45px
+        .header__nav #main-nav>li a
+            color: $color-dark
+    body:not(.header__transparent):not(.header__dark).scrolled &
+        padding-top: 25px
+        padding-bottom: 25px
+    .scrolled &
+        padding-top: 25px
+        padding-bottom: 50px
+    &--static
+        position: static
+    &__logo
+        width: 146px
+        max-width: 30%
+        display: inline-block
+        position: relative
+        z-index: 5
+        +max-screen(1150px)
+            width: 100px
+        +max-screen($breakpoint-lg)
+            margin-left: 0
+        +max-screen($breakpoint-sm)
+            max-width: 40%
+        .image-ratio
+            padding: 0 !important
+            img, svg
+                position: relative
+                max-width: 100%
+                width: auto
+                height: auto
+        
+        &__img
+            &--dark
+                display: none
+                align-items: center 
+                body:not(.header__transparent):not(.header__dark) &
+                    display: flex
+                .sub-menu--active &
+                    display: none !important
+            &--white
+                display: none
+                align-items: center
+                .header__dark &, .header__transparent &
+                    display: flex
+
+    &__info-bar
+        background-color: rgba(244, 120, 32 , 0.9)
+        padding: 15px
+        z-index: 2
+        position: relative
+        display: flex
+        &--closed
+            display: none
+        &__content
+            font-size: 14px
+            line-height: 1.2em
+            color: #fff
+            +max-screen($breakpoint-sm)
+                font-size: 10px
+        &__close
+            min-width: 30px
+            width: 30px
+            height: 30px
+            display: inline-block
+            position: relative
+            cursor: pointer
+            margin-left: 20px
+            &:before,
+            &:after
+                content: ''
+                position: absolute
+                width: 100%
+                height: 2px
+                border-radius: 1px
+                background-color: #fff
+                top: 50%
+                left: 0
+            &:before
+                transform: rotate(-45deg)
+            &:after
+                transform: rotate(45deg)
+
+
+    &__nav
+        z-index: 4
+        display: flex
+        align-items: center
+        display: flex
+        +max-screen(1100px)
+            display: block
+            position: absolute
+            width: 100%
+            height: calc(100vh - 60px)
+            top: 100%
+            right: -100%
+            overflow: auto
+            background-color: #ffffff
+            transition: 0.3s
+            flex-wrap: wrap
+            align-items: flex-start
+            padding: 50px
+            .scrolled &
+                top: 100%
+            .header-active &
+                right: 0
+            .admin-bar &
+                top: 100%
+                +max-screen(782px)
+                    top: 100%
+            .admin-bar.scrolled &
+                +max-screen(1100px)
+                    top: 100%
+        .main-nav
+            +max-screen(1100px)
+                width: 100%
+                padding-bottom: 30px
+                box-sizing: border-box
+                overflow: hidden
+                overflow-y: auto
+        #main-nav
+            display: flex
+            flex-wrap: wrap
+            +max-screen(1100px)
+                flex-direction: column
+                align-items: center
+            > li
+                margin-right: 40px
+                +max-screen(1100px)
+                    margin-right: 0
+                    width: 100%
+                    padding-top: 15px
+                    padding-bottom: 15px
+                    border-bottom: 1px solid orange
+
+                a
+                    transition: 0.2s
+                    color: $color-light
+                    +max-screen(1100px)
+                        color: black
+                    .header__dark &,
+                    .scrolled &
+                        color: #fff
+                        +max-screen(1100px)
+                            color: #000
+                    body:not(.header__transparent):not(.header__dark).sub-menu--active &
+                        color: $color-light
+                    &:hover
+                        color: $color-light-orange !important
+            .menu-item__parent
+                position: relative
+                &:after
+                    content: ''
+                    position: absolute
+                    top: -64px
+                    right: 0
+                    width: 0
+                    height: 6px
+                    background-color: $color-light-orange
+                    transition: 0.2s ease-out
+                &:hover::after, .sub-menu--active &::after
+                    width: 100%
+                .scrolled &::after
+                    top: -39px
+                ~ .sub-menu
+                    display: none
+                    position: absolute
+                    margin-top: 45px
+                    left: 30px
+                    width: calc(100% - 60px)
+                    max-height: calc(80vh - 105px )
+                    padding-bottom: 30px
+                    overflow: auto
+                    gap: 20px
+                    grid-template-columns: repeat(4, calc(25% - 15px))
+                    grid-auto-rows: 140px
+                    > li
+                        border: $default-border
+                        transition: $default-transition
+                        &:hover
+                            border-color: $color-light-orange
+                            background-color: $color-light-orange
+                        a
+                            width: 100%
+                            height: 100%
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            position: relative
+                            img
+                                position: absolute
+                                top: 15%
+                                left: 15%
+                                width: 70%
+                                height: 70%
+                                object-fit: contain
+
+                &:hover, .sub-menu--active &
+                    ~ .sub-menu
+                        display: grid
+                a
+                    .sub-menu--active &
+                        color: $color-light-orange !important
+        &__wrapper
+            display: flex
+            align-items: center
+            justify-self: flex-end
+            margin-left: auto
+            +max-screen(1100px)
+                margin-right: 0
+                margin-left: auto
+                justify-self: flex-end
+                z-index: 20
+
+            &:before
+                content: ''
+                position: fixed
+                top: 0
+                left: -100%
+                width: 100%
+                height: 100%
+                opacity: 0
+                transition: opacity 0.3s ease-out 0s, left 0s linear 0.5s
+                .header-active &
+                    left: 0
+                    opacity: 0.5
+                    transition: opacity 0.3s ease-out 0s, left 0s linear 0s
+    .header__buttons
+        z-index: 21
+        position: relative
+        +max-screen(1100px)
+            display: flex
+            align-items: center
+        body:not(.header__transparent):not(.header__dark) &,
+            .button
+                border-color: $color-bg-dark
+                &:first-child svg
+                    path
+                        &:first-of-type
+                            fill: $color-dark
+                        &:nth-of-type(2)
+                            fill: $color-dark
+                        &:nth-of-type(3)
+                            stroke: $color-light
+        .gtranslate_wrapper
+            position: absolute
+            bottom: 100%
+            margin-bottom: 3px
+            right: 0
+            display: flex
+            justify-content: flex-end
+            gap: 5px
+            img
+                width: 25px
+            +max-screen(1100px)
+                position: relative
+                margin-right: 15px
+                img
+                    width: 12px
+    .header-login
+        display: flex
+        align-items: center
+        color: $color-light
+        
+        .header__dark &,
+        .scrolled &
+            color: #fff
+            
+        body:not(.header__transparent):not(.header__dark) &
+            color: $color-dark
+        &:hover
+            color: $color-light-orange !important
+        .login-icon
+            width: 46px
+            height: 46px
+            padding: 0
+            margin-right: 10px
+            +max-screen($breakpoint-sm)
+                width: 35px
+                height: 35px
+        &-text
+        
+            
+
+.nav-toggle
+    width: 40px
+    height: 40px
+    border-radius: 12px
+    position: relative
+    display: none
+    float: right
+    z-index: 5
+    margin-right: 0
+    justify-self: flex-end
+    margin-left: 10px
+    +max-screen(1100px)
+        display: block
+
+    &-icon
+        position: absolute
+        width: 28px
+        height: 16px
+        top: 12px
+        left: 12px
+
+        &__inner,
+        &:before,
+        &:after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 2px
+            border-radius: 1px
+            background-color: #fff
+            .header__dark &,
+            .scrolled &
+                background-color: #fff
+
+        &__inner
+            top: 0
+            left: 0
+            transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s
+        &:before
+            top: 50%
+            left: 0			
+            transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s , transform 0.25s linear 0s
+        &:after
+            top: 100%
+            left: 0
+            transition: opacity 0.25s linear 0s , top 0.25s linear 0.25s , transform 0.25s linear 0s
+
+        .header-active &,&.nav-close
+            &__inner
+                opacity: 0
+                top: 50%
+                transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s
+            &:before
+                transform: rotate(45deg)
+                top: 50%
+                transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s , transform 0.25s linear 0.25s
+            &:after
+                transform: rotate(-45deg)
+                top: 50%
+                transition: opacity 0.25s linear 0.25s , top 0.25s linear 0s , transform 0.25s linear 0.25s

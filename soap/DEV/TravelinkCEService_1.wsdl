@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TravelinkCEService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:i0="http://www.opentravel.org/OTA/2003/05" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://schemas.comtec-europe.net/tlce/2011/03" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy">
+  <wsp:Policy wsu:Id="CustomBinding_IOTATravelinkService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_ITravelinkService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.opentravel.org/OTA/2003/05" location="TravelinkCEService.wsdl"/>
+  <wsdl:import namespace="http://schemas.comtec-europe.net/tlce/2011/03" location="TravelinkCEService_2.wsdl"/>
+  <wsdl:types/>
+  <wsdl:binding name="CustomBinding_IOTATravelinkService" type="i0:IOTATravelinkService">
+    <wsp:PolicyReference URI="#CustomBinding_IOTATravelinkService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ServiceInformation">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/ServiceInformation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_Ping">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_Ping" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AirLowFareSearchGrouped">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AirLowFareSearchGrouped" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AirLowFareSearch">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AirLowFareSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelAvail">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelAvail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelErrata">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelErrata" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelExternalErrata">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelExternalErrata" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HotelInfo">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HotelInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AddDynamicPkgToQuote">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AddDynamicPkgToQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_VehLocSearch">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehLocSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_VehAvailRate">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehAvailRate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_VehPriceOptions">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_VehPriceOptions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_TransferAvail">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_TransferAvail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_ExtraAvail">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_ExtraAvail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_SupplementsAvail">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_SupplementsAvail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_CreateQuote">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_CreateQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_AddToQuote">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_AddToQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_DeleteFromQuote">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_DeleteFromQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_ViewQuote">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_ViewQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_CloneQuote">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_CloneQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_Booking">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_Booking" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_3DSecure">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_3DSecure" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_HBSIHotelResConfirmation">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_HBSIHotelResConfirmation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTA_FareUpgradeSearch">
+      <soap:operation soapAction="http://www.opentravel.org/OTA/2003/05/IOTATravelinkService/OTA_FareUpgradeSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_ITravelinkService" type="i1:ITravelinkService">
+    <wsp:PolicyReference URI="#CustomBinding_ITravelinkService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetStaticData">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetStaticData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BookingSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgentLogin">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AgentLogin" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingManagement">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BookingManagement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePostCode">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ValidatePostCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetDocument" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccommodationChangesList">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetAccommodationChangesList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentGroupMarkup">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetAgentGroupMarkup" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAgentGroupMarkup">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/SetAgentGroupMarkup" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCreditCard">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ValidateCreditCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiptTypesList">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ReceiptTypesList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlightFareRules">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FlightFareRules" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserManagement">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/UserManagement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DynamicPackageSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/DynamicPackageSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DynamicPackageSearchFollowOn">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/DynamicPackageSearchFollowOn" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwinCentreSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwinCentreFollowonFlightsSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreFollowonFlightsSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwinCentreFollowonAccomodationSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreFollowonAccomodationSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuoteManagement">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/QuoteManagement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CruiseSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Amex">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/Amex" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CruiseBasket">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseBasket" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClientManagement">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ClientManagement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatMap">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetSeatMap" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFlightSeat">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/SetFlightSeat" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccommodationGridSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AccommodationGridSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CruiseInfo">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlightMarkup">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FlightMarkup" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeadInPackagePriceSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/LeadInPackagePriceSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentServiceManagement">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PaymentServiceManagement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BrochureRequest">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BrochureRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarParkSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CarParkSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChannelManagement">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ChannelManagement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AirportLoungesSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AirportLoungesSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reports">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/Reports" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToursSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ToursSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourComponentSearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TourComponentSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTourCoachSeatPlan">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetTourCoachSeatPlan" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HomeConnectCharges">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/HomeConnectCharges" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FerrySearch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FerrySearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FerryPriceValidation">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FerryPriceValidation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceMatch">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PriceMatch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreBookingChecks">
+      <soap:operation soapAction="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PreBookingChecks" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TravelinkCEService">
+    <wsdl:port name="CustomBinding_IOTATravelinkService" binding="tns:CustomBinding_IOTATravelinkService">
+      <soap:address location="https://nirvana-uat-ota.hosting.inspiretec.com/TravelinkCEService.svc"/>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_ITravelinkService" binding="tns:CustomBinding_ITravelinkService">
+      <soap:address location="https://nirvana-uat-ota.hosting.inspiretec.com/TravelinkCEService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

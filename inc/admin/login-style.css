@@ -1,0 +1,23 @@
+body{
+    background-image: url(./rocket-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login h1 a{
+    background-image: url(./logo.svg);
+    width: 170px;
+    background-size: contain;
+    background-position: center;
+}
+
+.login #nav a, .login #backtoblog a{
+    color: #fff;
+}
+
+#loginform .button-primary {
+    border-color: #29255b;
+    background-color: #29255b;
+    color: #ffffff;
+}

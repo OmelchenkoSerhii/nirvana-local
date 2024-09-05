@@ -1,0 +1,207 @@
+.container
+	padding-left: 30px
+	padding-right: 30px
+	+min-screen($breakpoint-xxl)
+		max-width: 1260px
+	+max-screen($breakpoint-md)
+		padding-left: 20px
+		padding-right: 20px
+	&--full
+		+min-screen($breakpoint-xxl)
+			max-width: 100%
+
+.row
+	&--x
+		&--center
+			justify-content: center
+	&--y
+		&--middle
+			align-items: center
+		&--top
+			align-items: flex-start
+		&--bottom
+			align-items: flex-end
+
+.section
+	padding-top: 100px
+	padding-bottom: 100px
+	+max-screen(1050px)
+		padding-top: 60px
+		padding-bottom: 60px
+	+max-screen($breakpoint-lg)
+		//padding-top: 30px
+		//padding-bottom: 30px
+	+max-screen($breakpoint-md)
+		padding-top: 60px
+		padding-bottom: 60px
+	+max-screen($breakpoint-sm)
+		//padding-top: rem(30px)
+		//padding-bottom: rem(30px)
+	&--spacing--sm
+		padding-top: 25px
+		padding-bottom: 25px
+	&--spacing--lg
+		padding-top: 165px
+		padding-bottom: 165px
+		+max-screen(1050px)
+			padding-top: 60px
+			padding-bottom: 60px
+	&--fullscreen
+		min-height: 70vh
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+
+.page-blocks
+
+	+max-screen($breakpoint-md)
+		padding-bottom: 0
+	.header-transparent &
+		padding-top: 0
+
+.hidden
+	&--lg
+		+min-screen($breakpoint-lg)
+			display: none !important
+
+.visible
+	&--lg
+		+max-screen($breakpoint-lg)
+			display: none !important
+
+.spacing
+	&-p
+
+		&-30
+			padding-top: 30px
+			padding-bottom: 30px
+			+max-screen($breakpoint-sm)
+				padding-top: 15px
+				padding-bottom: 15px
+		&-40
+			padding-top: 40px
+			padding-bottom: 40px
+			+max-screen($breakpoint-sm)
+				padding-top: 20px
+				padding-bottom: 20px
+		&-60
+			padding-top: 60px
+			padding-bottom: 60px
+			+max-screen($breakpoint-sm)
+				padding-top: 30px
+				padding-bottom: 30px
+
+	&-pt
+		&-30
+			padding-top: 30px
+			+max-screen($breakpoint-sm)
+				padding-top: 15px
+		&-40
+			padding-top: 40px
+			+max-screen($breakpoint-sm)
+				padding-top: 20px
+		&-60
+			padding-top: 60px
+			+max-screen($breakpoint-sm)
+				padding-top: 30px
+	&-pb
+		&-20
+			padding-bottom: 20px
+			+max-screen($breakpoint-sm)
+				padding-bottom: 15px
+		&-25
+			padding-bottom: 25px
+			+max-screen($breakpoint-sm)
+				padding-bottom: 25px
+		&-30
+			padding-bottom: 30px
+			+max-screen($breakpoint-sm)
+				padding-bottom: 15px
+		&-40
+			padding-bottom: 40px
+			+max-screen($breakpoint-sm)
+				padding-bottom: 20px
+		&-50
+			padding-bottom: 50px
+			+max-screen($breakpoint-sm)
+				padding-bottom: 30px
+		&-60
+			padding-bottom: 60px
+			+max-screen($breakpoint-sm)
+				padding-bottom: 30px
+	&-m
+		&-30
+			margin-top: 30px
+			margin-bottom: 30px
+		&-40
+			margin-top: 40px
+			margin-bottom: 40px
+	&-mt
+		&-30
+			margin-top: 30px
+		&-40
+			margin-top: 40px
+	&-mb
+		&-30
+			margin-bottom: 30px
+		&-40
+			margin-bottom: 40px
+
+$z-indexes: 5
+.z
+	@for $i from 1 through $z-indexes
+		&-#{$i}
+			z-index: #{$i}
+
+.g
+	&-default
+		gap: 30px
+	&x-default
+		column-gap: 30px
+	&y-default
+		row-gap: 30px
+	&-10
+		gap: 10px
+	&x-10
+		column-gap: 10px
+	&y-10
+		row-gap: 10px
+	&-15
+		gap: 15px
+	&x-15
+		column-gap: 15px
+	&y-15
+		row-gap: 15px
+	&-20
+		gap: 20px
+	&x-20
+		column-gap: 20px
+	&y-20
+		row-gap: 20px
+	&-30
+		gap: 30px
+	&y-30
+		row-gap: 30px
+
+.start
+	&-0
+		left: 0
+
+.end
+	&-0
+		right: 0
+
+.top
+	&-0
+		top: 0
+
+.bottom
+	&-0
+		bottom: 0
+
+.w
+	&-sm
+		&-50
+			+min-screen($breakpoint-sm)
+				width: 50% !important

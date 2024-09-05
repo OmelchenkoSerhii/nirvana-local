@@ -1,0 +1,46 @@
+.icons-section--features
+    .icons-section__list
+        row-gap: 75px
+    .icon-block
+        &__icon
+            margin-bottom: 30px !important
+            img
+                width: auto
+                height: 50px
+        &__content
+            > div
+                margin-top: 18px !important
+            h3
+                margin: 0
+
+.icons-section--numbers
+    .icons-section__list
+        > li
+            &:not(:last-of-type)
+                border-right: 1px solid $color-light
+            &:nth-last-of-type(-n+2)
+                +screen($breakpoint-sm, $breakpoint-lg)
+                    border-right: none
+            &:nth-of-type(2n+2)
+                +max-screen($breakpoint-sm)
+                    border-right: none
+            +max-screen($breakpoint-xs)
+                width: 100%
+                max-width: 100%
+                border: none !important
+    .icon-block
+        &__icon
+            margin-bottom: 20px !important
+        &__content
+            > div
+                margin-top: 5px !important
+            h3
+                font-size: 52px !important
+                line-height: normal !important
+                margin: 0
+                +max-screen($breakpoint-lg)
+                    font-size: 42px
+                +max-screen($breakpoint-md)	
+                    font-size: 42px
+                +max-screen($breakpoint-sm)	
+                    font-size: 34px

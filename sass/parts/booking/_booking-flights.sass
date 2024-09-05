@@ -1,0 +1,99 @@
+.flights-nav
+    &__inner
+        display: flex
+        justify-content: space-between
+    &__item
+        display: flex
+        align-items: center
+        justify-content: center
+        background-image: url("data:image/svg+xml,%3Csvg width='391' height='56' viewBox='0 0 391 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3962 25.2847L1.25263 0.75H370.013C373.423 0.75 376.556 2.62612 378.166 5.63195L389.074 25.9931C389.746 27.2467 389.746 28.7533 389.074 30.0069L378.166 50.368C376.556 53.3739 373.423 55.25 370.013 55.25H1.25263L14.3962 30.7153C15.3049 29.0191 15.3049 26.9809 14.3962 25.2847Z' stroke='%23000C26' stroke-width='1.5'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-size: 100% 100%
+        background-position: center
+        opacity: 0.2
+        width: 100%
+        height: 56px
+        margin-left: -10px
+        gap: 10px
+        font-size: 16px
+        font-weight: 700
+        &.active
+            opacity: 1
+        &::before
+            content: ""
+            width: 28px
+            height: 28px
+            background-color: transparentize($color-bg-dark, 0.9)
+            border: 1.5px solid transparentize($color-bg-dark, 0.4)
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+        &:first-of-type
+            margin-left: 0
+            background-image: url("data:image/svg+xml,%3Csvg width='392' height='56' viewBox='0 0 392 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0.75H376.551L390.074 25.9931C390.746 27.2467 390.746 28.7533 390.074 30.0069L376.551 55.25H10C4.89137 55.25 0.75 51.1086 0.75 46V10C0.75 4.89137 4.89137 0.75 10 0.75Z' fill='white' stroke='%23000C26' stroke-width='1.5'/%3E%3C/svg%3E%0A")
+        @for $i from 1 through 2 
+            &:nth-of-type(#{$i})
+                &::before
+                    content: "#{$i}"
+
+.flights-sorting
+    form
+        display: flex
+        gap: 30px
+    &__field
+        position: relative
+        cursor: pointer
+        h5
+            display: flex
+            align-items: center
+            gap: 10px
+            font-size: 16px
+            font-weight: 400
+            &::after
+                content: ""
+                background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.19995' y='3.84961' width='7' height='2.33333' transform='rotate(45 2.19995 3.84961)' fill='%23F47920'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.4495 5.5L5.49972 10.4497L3.8498 8.79983L8.79955 3.85008L10.4495 5.5Z' fill='%23F47920'/%3E%3C/svg%3E%0A")
+                background-repeat: no-repeat
+                background-size: 100% 100%
+                width: 11px
+                height: 11px
+                display: block
+            span
+                font-weight: 700
+    &__select
+        padding-top: 15px
+        position: absolute
+        visibility: hidden
+        opacity: 0
+        transition: $default-transition
+        min-width: 270px
+        z-index: 5
+        ul
+            background: $color-bg-light
+            padding: 10px
+            border-radius: 10px
+            li
+                display: flex
+                align-items: center
+                font-size: 16px
+                padding: 0 10px
+                white-space: nowrap
+                gap: 13px
+                height: 50px
+                transition: 300ms
+                cursor: pointer
+                &:hover
+                    background-color: transparentize($color-blue, 0.96)
+                > span
+                    font-weight: 700
+                    width: 70px
+    &__field:hover .flights-sorting__select
+        visibility: visible
+        opacity: 1
+
+.flights-list
+    &__card
+        min-height: 113px
+        padding: 0 20px
+        border-radius: 10px
+        background-color: $color-bg-light

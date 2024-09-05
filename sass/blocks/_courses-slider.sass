@@ -1,0 +1,127 @@
+.courses-slider
+    overflow: hidden
+    &__heading
+        padding-bottom: 60px
+    &__container
+        position: relative
+    .slick-list
+        overflow: visible!important
+        .slick-slide
+            opacity: 0.1
+            transition: 0.3s
+            &.slick-active
+                opacity: 1
+    &__list
+        margin: 0 -25px
+        +max-screen($breakpoint-sm)
+            margin: 0 -20px
+    &__item
+        padding: 0 25px
+        +max-screen($breakpoint-sm)
+            padding: 0 20px
+        &__inner
+
+        &__img
+            padding-bottom: 46%
+            
+        &__content
+            background: #1B1D3B
+            padding: 45px 30px
+            color: #fff
+            +max-screen($breakpoint-sm)
+                padding: 30px 20px
+            &__title
+                padding-bottom: 20px
+            &__subtitle
+                padding-bottom: 18px
+            &__list
+                padding-bottom: 30px
+                li
+                    color: $color-text-dark
+            &__buttons
+
+        &__price
+            display: flex
+            flex-wrap: wrap
+            .courseHero__price
+                font-size: 19px
+                line-height: 1.47em
+                margin-left: 12px
+        .cart
+            .quantity
+                display: none
+            
+    &__nav
+        display: flex
+        +max-screen($breakpoint-md)
+            padding-top: 30px
+            display: flex
+            width: 100%
+            justify-content: space-between
+            margin: -4px
+        &__btn
+            position: absolute
+            top: 192px
+            width: 210px
+            max-width: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+            cursor: pointer
+            +min-screen(1800px)
+                top: 286px
+            +max-screen($breakpoint-md)
+                position: relative
+                margin: 4px
+                top: 0
+            +max-screen($breakpoint-sm)
+                padding: 10px 4px
+                font-size: 14px
+            &__icon
+                width: 13px
+                max-width: 13px
+                min-width: 13px
+                height: auto
+                +max-screen($breakpoint-md)
+                
+                svg
+                    width: 100%
+                    height: auto
+                    path, rect
+                        transition: 0.3s
+            
+            &:hover
+                background-color: #fff
+                color: $color-primary
+                svg
+                    path
+                        stroke: $color-primary
+                    rect
+                        fill: $color-primary
+        &__next
+            left: 100%
+            margin-left: 50px
+            +max-screen($breakpoint-md)
+                left: 0
+                margin-left: 0
+            .courses-slider__nav__btn__icon
+                margin-left: 18px
+                +max-screen($breakpoint-sm)
+                    margin-left: 10px
+        &__prev
+            right: 100%
+            margin-right: 50px
+            +max-screen($breakpoint-md)
+                right: 0
+                margin-right: 5px
+            .courses-slider__nav__btn__icon
+                margin-right: 18px
+                transform: rotate(180deg)
+                +max-screen($breakpoint-sm)
+                    margin-right: 5px
+.courseHero__image
+    +max-screen($breakpoint-md)
+        display: flex
+        align-items: center
+        justify-content: center
+

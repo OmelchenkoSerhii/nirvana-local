@@ -1,0 +1,653 @@
+html, body
+  -webkit-overflow-scrolling: touch
+
+body
+    font-family: $font-family-base
+    font-size: $default-font-size
+    font-weight: $default-font-weight
+    font-style: normal
+    line-height: $default-line-height
+    color: $default-text-color
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-backface-visibility: hidden
+    -webkit-tap-highlight-color: transparent
+    // ::-moz-selection
+    //     color: $color-light
+    //     background: transparent
+    // ::selection
+    //     color: $color-light
+    //     background: transparent
+
+
+.text
+    &--style
+        
+    &--default,&--default *
+        font-family: $font-family-base
+        font-size: $default-font-size
+        font-weight: $default-font-weight
+        font-style: normal
+        line-height: $default-line-height
+
+    &--uppercase
+        text-transform: uppercase !important
+    &--transform--none
+        text-transform: none !important
+        
+    &--left
+        text-align: left
+    &--right
+        text-align: right
+    &--center
+        text-align: center
+        
+    &--color
+        &--white
+            &,& *, &.content-block *
+                color: #fff
+        &--light
+            &,& *
+                color: $color-light
+        &--dark
+            &, & *
+                color: $color-dark
+        &--light-orange
+            &, & *
+                color: $color-light-orange
+        &--default
+            &,& *
+                color: $default-text-color
+    &--columns--2
+        column-count: 2
+
+    &--underline
+        text-decoration: underline
+
+    &--spacing
+        letter-spacing: 0.05em
+
+    &--opacity
+        opacity: 0.6
+
+    &--size
+        &--12
+            font-size: 12px !important
+            line-height: 16px !important
+        &--14
+            font-size: 14px !important
+            line-height: 17px !important
+        &--16
+            font-size: 16px !important
+            line-height: normal !important
+        &--18
+            font-size: 18px !important
+            line-height: 22px !important
+        &--25
+            font-size: 25px !important
+            line-height: 30px !important
+            +max-screen($breakpoint-sm)
+                font-size: 20px !important
+                line-height: 25px !important
+        &--28
+            font-size: 28px !important
+            line-height: 1.2em !important
+            +max-screen($breakpoint-sm)
+                font-size: 20px !important
+        &--32
+            font-size: 32px !important
+            line-height: 1.4em !important
+            +max-screen($breakpoint-sm)
+                font-size: 22px !important
+                line-height: 25px !important
+        &--40
+            font-size: 40px !important
+            line-height: 40px !important
+            +max-screen($breakpoint-sm)
+                font-size: 35px !important
+                line-height: 35px !important
+
+    &--outline
+        color: transparent
+        -webkit-text-stroke: 1px $default-text-color
+        .content-block &
+            color: transparent
+        .text-color-white &
+            -webkit-text-stroke: 1px #fff
+
+
+.font
+    &--primary
+        font-family: $font-family-base
+    &--secondary
+        font-family: $font-family-secondary
+    &--italic
+        font-style: italic
+    &--weight
+        &--300,
+        &--300 *
+            font-weight: 300
+        &--400,
+        &--400 *
+            font-weight: 400
+        &--500,
+        &--500 *
+            font-weight: 500
+        &--600,
+        &--600 *
+            font-weight: 600
+        &--700,
+        &--700 *
+            font-weight: 700
+        &--900,
+        &--900 *
+            font-weight: 900
+
+
+.p1
+    font-size: 15px
+    line-height: normal
+
+.p2
+    font-size: 18px
+    line-height: 22px
+
+.p3
+
+.p4
+    +max-screen($breakpoint-lg)
+    +max-screen($breakpoint-sm)
+
+
+h1,.h1
+    font-size: 70px
+    line-height: 70px
+    font-weight: 900
+    +max-screen($breakpoint-xl)
+    +max-screen($breakpoint-lg)
+        font-size: 60px
+        line-height: 60px
+    +max-screen($breakpoint-md)
+        font-size: 55px
+        line-height: 55px
+    +max-screen($breakpoint-sm)
+        font-size: calcFluidSize(35, 55, 320, $breakpoint-sm)
+        line-height: calcFluidSize(42, 60, 320, $breakpoint-sm)
+
+h2,.h2
+    font-size: 52px
+    line-height: normal
+    font-weight: 900
+    +max-screen($breakpoint-lg)
+        font-size: 42px
+    +max-screen($breakpoint-md)	
+        font-size: 42px
+    +max-screen($breakpoint-sm)	
+        font-size: 30px
+
+h3,.h3
+    font-size: 25px
+    line-height: 1.4em
+    font-weight: 700
+    +max-screen($breakpoint-xl)
+    +max-screen($breakpoint-md)	
+        
+h4,.h4
+    font-size: 20px
+    line-height: 1.4em
+    font-weight: 700
+    line-height: normal
+    +max-screen($breakpoint-xl)
+    +max-screen($breakpoint-md)	
+
+.h5,h5
+    font-size: 14px
+    line-height: 1.4em
+    font-weight: 800
+    line-height: normal
+    +max-screen($breakpoint-xl)
+    +max-screen($breakpoint-md)	
+
+h6,.h6
+        
+
+.link-underline
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        height: 1px
+        background-color: $color-light
+        transition: 0.2s ease-out
+    &:hover:before
+        width: 0
+
+.checkbox-list
+    margin: -5px 0
+    li
+        padding: 5px 0
+        display: flex
+        &::before
+            display: inline-block
+            content: ''
+            width: 15px
+            min-width: 15px
+            height: 15px
+            background-image: url(../assets/images/icon-checkbox.svg)
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            margin-right: 20px
+            margin-top: 6px
+
+
+body:not(.page-template-template-api-book)
+    h1, .h1, h2, .h2
+        //text-transform: uppercase
+
+.content-block
+    &--dark
+        color: $color-dark
+        a
+            color: $color-light-orange
+    p,h1,h2,h3,h4,h5,h6
+        margin-bottom: 20px
+        +max-screen($breakpoint-md)
+            margin-bottom: 15px
+        &:nth-last-child(1)
+            margin-bottom: 0
+    h1,h2
+        margin-bottom: 30px
+        +max-screen($breakpoint-md)
+            margin-bottom: 20px
+        &:nth-last-child(1)
+            margin-bottom: 0
+    h3
+        padding-bottom: 10px
+        &:nth-last-child(1)
+            margin-bottom: 0
+    
+    h1,h2,h3,h4,h5
+        //text-transform: uppercase
+    p,ul,ol
+    a
+        text-decoration: underline
+        &:not(.button)
+            transition: 0.3s
+            &:hover
+                opacity: 0.8
+
+    .button
+        margin-top: rem(40px)
+        margin-bottom: rem(40px)
+        text-decoration: none
+        &:nth-child(1)
+            //margin-top: 0
+        &:nth-last-child(1)
+            margin-bottom: 0
+        +max-screen($breakpoint-md)
+            margin-top: rem(30px)
+            margin-bottom: rem(30px)
+    iframe
+        width: 100%
+        height: auto
+        aspect-ratio: 16 / 9
+    ul
+        margin-bottom: 20px
+        padding-left: 23px
+        +max-screen($breakpoint-md)
+            padding-left: 23px
+        +max-screen($breakpoint-sm)
+            padding-left: 23px
+        .textBlock--full  &
+            padding-left: 15px
+            +max-screen($breakpoint-md)
+
+        &>li
+            display: block
+            position: relative
+            margin-bottom: 5px
+            &:nth-last-child(1)
+                margin-bottom: 0
+            &:before
+                content: ''
+                background-color: $color-light
+                width: 7px 
+                height: 7px
+                min-width: 7px
+                border-radius: 50%
+                margin-bottom: 0.12em
+                margin-right: 13px
+                font-weight: 700
+                position: absolute
+                right: 100%
+                top: 10px
+                .text--color--dark &
+                    background-color: $color-dark
+            ol
+                padding: 10px
+                padding-left: rem(30px)
+                &>li
+                    margin-bottom: 0
+            ul
+                padding: 10px
+                padding-left: rem(30px)
+    ol
+        list-style-type: decimal
+        counter-reset: my-counter
+        margin-bottom: 20px
+        padding-left: 25px
+        +max-screen($breakpoint-md)
+            padding-left: 25px
+        +max-screen($breakpoint-sm)
+            padding-left: 25px
+        &>li
+            list-style-type: decimal
+            counter-increment: my-counter
+            margin-bottom: 5px
+            position: relative
+            &:nth-last-child(1)
+                margin-bottom: 0
+            &::marker
+                color: $default-text-color
+                //margin-bottom: 5px
+                font-weight: 600
+            ol
+                padding-left: 30px
+            ul
+                padding-left: rem(30px)
+    img
+        max-width: 100%
+        height: auto
+        overflow: hidden
+    code
+        margin: 12px 0
+        line-height: $default-line-height
+        padding: 2px 4px
+        border: 1px solid #dde4e9
+        background-color: #F6F6F6
+        color: #232527
+        display: inline-block
+    pre
+        white-space: pre-wrap
+    blockquote
+        margin: rem(24px 0)
+        position: relative
+        padding-left: rem(75px)
+        padding-top: rem(20px)
+        +max-screen($breakpoint-sm)
+            padding-left: rem(30px)
+            padding-right: rem(30px)
+            padding-top: rem(5px)
+        p
+            font-size: rem(30px)
+            line-height: rem(42px)
+            font-weight: 400
+            +max-screen($breakpoint-md)
+                font-size: rem(24px)
+                line-height: 1.25em
+        a
+            font-size: 14px
+            line-height: 19px
+        & *
+            z-index: 1
+        +max-screen($breakpoint-md)
+
+        &:before
+            content: '"'
+            position: absolute
+            top: 0
+            left: 0
+            width: rem(55px)
+            height: rem(55px)
+            font-size: 100px
+            line-height: 85px
+            font-weight: 600
+            color: $color-light
+            //background-image: url(../assets/images/icon-quote.svg)
+            //background-repeat: no-repeat
+            //background-size: contain
+            //background-position: center
+            +max-screen($breakpoint-sm)
+                width: rem(30px)
+                height: rem(30px)
+                left: -10px
+    .wpcf7
+        padding: rem(12px 0)
+        &:nth-last-child(1)
+            padding-bottom: 0
+    &--md
+        p
+            font-size: 18px
+            line-height: 1.55em
+    &--lg
+        p
+            font-size: 20px
+    &--xl
+        p
+            font-size: 22px
+            line-height: 1.54em
+    .list--clear-style
+        padding-left: 0 !important
+        li
+            &::before
+                content: unset !important
+
+.link
+    &--style
+        &--1
+            font-size: 12px
+            line-height: normal
+            font-weight: 700
+            color: $color-light-orange
+            transition: $default-transition
+            text-transform: uppercase
+            position: relative
+            white-space: nowrap
+            &:before
+                content: ''
+                position: absolute
+                bottom: 0
+                right: 0
+                width: 100%
+                height: 2px
+                background-color: $color-light-orange
+                transition: $default-transition
+            &:hover
+                color: $color-dark
+                &:before
+                    width: 0
+        &--2
+            font-size: 12px
+            line-height: normal
+            font-weight: 700
+            text-transform: uppercase
+            position: relative
+            white-space: nowrap
+
+.tml
+    .tml-message
+        color: #f47920
+        border-left: 4px solid #f47920
+        a
+            color: #f47920
+            text-decoration: underline
+    &.tml-login, &.tml-lostpassword
+        background: #fff
+        color: #000C26
+        padding: 40px
+        position: relative
+    &.tml-lostpassword
+        .tml-submit-wrap
+            margin-left: auto
+            margin-bottom: 15px
+        .tml-links
+            display: flex
+            justify-content: space-between
+            li
+                margin-top: 0
+            a
+                color: #000C26
+                font-size: 14px
+    .tml-field
+        width: 100% 
+        height: 57px
+        padding-left: 20px
+        padding-right: 20px
+        background: #fff
+        border: 1px solid #000C26
+    .tml-field-wrap
+        width: 100%
+    .tml-rememberme-wrap,
+    .tml-submit-wrap
+        width: 50%
+        margin-bottom: 0
+    .tml-rememberme-wrap
+        display: flex
+        align-items: center
+    form
+        display: flex
+        flex-wrap: wrap
+        position: relative
+        .tml-submit-wrap
+            display: flex
+            justify-content: flex-end
+            button
+                color: #fff
+                height: 50px
+                background: #F47920
+                border: 1px solid #F47920
+                padding-left: 30px
+                padding-right: 30px
+                transition: 0.3s
+                font-family: $font-family-base
+                &:hover
+                    background: #fff
+                    color:  #F47920
+                    transition: 0.3s
+            input
+                font-family: $font-family-base
+    .tml-checkbox+.tml-label
+        padding-left: 5px
+    .tml-lostpassword-link 
+        position: absolute
+        bottom: 115px
+        .booking__col-content &
+            bottom: 80px
+            +max-screen($breakpoint-sm)
+                bottom: 55px
+        a
+            color: #F47920
+            font-size: 12px
+            text-decoration: underline
+    .tml-register-link
+        position: relative
+        text-align: right
+        margin-top: 8px
+        .booking__col-content &
+            display: none
+        a
+            font-size: 14px
+            color: #000C26
+.page-template-profile-page
+    .event-card__main-content
+        +max-screen($breakpoint-sm)
+            flex-direction: column
+            justify-content: flex-start !important
+            align-items: flex-start !important
+            .event-booked-card__cat
+                padding-bottom: 10px
+                padding-top: 10px
+.profile-page__heading__title
+    +max-screen($breakpoint-md)
+        text-align: center
+.profile-page__heading__links__list
+    +max-screen($breakpoint-md)
+       justify-content: center
+            
+.ur-frontend-form
+    background: #fff
+    color: #000C26
+    padding: 40px
+    position: relative
+    border: none
+    +max-screen($breakpoint-sm)
+        padding: 15px
+    .input-text , .select
+        -webkit-appearance: none
+        width: 100% 
+        height: 57px
+        padding-left: 20px
+        padding-right: 20px
+        background: #fff
+        border: 1px solid #000C26
+    form
+        position: relative
+        .ur-submit-button
+            color: #fff
+            height: 50px
+            background: #F47920
+            border: 1px solid #F47920
+            padding-left: 30px
+            padding-right: 30px
+            transition: 0.3s
+            span
+                position: relative!important
+                margin-right: 8px!important
+            &:hover
+                background: #fff
+                color:  #F47920
+                transition: 0.3s
+    .ur-form-row .ur-form-grid label
+        font-weight: 400!important
+        font-size: $default-font-size
+    .field-privacy_policy
+        .form-row
+            display: flex !important
+            align-items: flex-start
+            padding-top: 20px
+            label
+                display: flex
+                margin-right: 10px
+                margin-top: 5px
+                align-items: flex-start
+            a
+                color: #F47920
+.tawk-button
+    width: 131px
+    height: 38px
+    .tawk-text-bold-3
+        font-size: 1rem
+.register
+    // #privacy_policy
+    //     &::before
+    //         position: absolute
+    //         content: " "
+    //         width: 14px
+    //         height: 14px
+    //         border: 1px solid #000
+    //         background: #fff
+    //     &::after
+    //         position: absolute
+    //         content: " "
+    //         width: 9px
+    //         height: 3px
+    //         opacity: 0
+    //         border: 1px solid #000
+    //         border-left: 2px solid #F47920
+    //         border-bottom: 2px solid #F47920
+    // .checkbox
+    //     input::checked
+    //         #privacy_policy::after
+    //             display: block
+
+            
+.two-column-list
+    column-count: 2
+    column-gap: 20px
+    padding: 0
+    +max-screen($breakpoint-md)
+        column-count: 1

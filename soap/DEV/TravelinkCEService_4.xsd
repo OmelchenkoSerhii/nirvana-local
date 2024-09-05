@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.comtec-europe.net/webapi/channelmanager" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.comtec-europe.net/webapi/channelmanager">
+  <xs:import schemaLocation="TravelinkCEService_5.xsd" namespace="http://schemas.comtec-europe.net/webapi/common"/>
+  <xs:complexType name="AccommodationAvailabilityUpdateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="q1:SupplierDetail" xmlns:q1="http://schemas.comtec-europe.net/webapi/common"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="AccommodationCode" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomAvailabilities" type="tns:RoomAvailabilityCollection"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoomAvailabilityCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomAvailability" nillable="true" type="tns:RoomAvailability"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoomAvailability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomCode" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RatePlan" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="RoomsAvailable" type="xs:decimal"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Status" type="tns:AvailabilityStatus"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Restriction" type="tns:Restriction"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AvailabilityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AVAILABLE"/>
+      <xs:enumeration value="NOT_AVAILABLE"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Restriction">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="BookingOffset" type="xs:int"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="LengthOfStay" type="tns:LengthOfStay"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LengthOfStay">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Min" type="xs:decimal"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Max" type="xs:decimal"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Unit" type="tns:UnitLengthOfStay"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="UnitLengthOfStay">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAY"/>
+      <xs:enumeration value="WEEK"/>
+      <xs:enumeration value="MONTH"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AccommodationCostUpdateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="q2:SupplierDetail" xmlns:q2="http://schemas.comtec-europe.net/webapi/common"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="AccommodationCode" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomValues" type="tns:RoomValueCollection"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoomValueCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomValue" nillable="true" type="tns:RoomValue"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoomValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomCode" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RatePlan" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomAmounts" type="tns:RoomAmountCollection"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoomAmountCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomAmount" nillable="true" type="tns:RoomAmount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoomAmount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PerPersonAmounts" type="tns:PerPersonAmountCollection"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="AdditionalGuestAmounts" type="tns:AdditionalGuestAmountCollection"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PerRoomAmount" type="tns:PerRoomAmount"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="DaysOfWeek" type="tns:DaysOfWeek"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PerPersonAmountCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PerPersonAmount" nillable="true" type="tns:PerPersonAmount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PerPersonAmount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseAmount">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="PersonCount" type="xs:decimal"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="PaxType" type="tns:PassengerType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BaseAmount">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Cost" type="xs:decimal"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Price" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PerRoomAmount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseAmount"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GuestAmount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseAmount">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="PaxType" type="tns:PassengerType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PassengerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AD"/>
+      <xs:enumeration value="CH"/>
+      <xs:enumeration value="IN"/>
+      <xs:enumeration value="SC"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AdditionalGuestAmountCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestAmount" nillable="true" type="tns:GuestAmount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DaysOfWeek">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Mon" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Tue" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Weds" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Thur" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Fri" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Sat" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Sun" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

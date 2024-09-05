@@ -1,0 +1,27 @@
+.parallaxImages
+    position: relative
+    overflow: hidden
+    &__heading
+        padding-bottom: 50px
+        +max-screen($breakpoint-md)
+            padding-bottom: 20px
+    &__item
+        &-1
+            padding-top: 50px
+            +max-screen($breakpoint-md)
+                padding-top: 30px
+        &-2
+            padding-top: 200px
+            +max-screen($breakpoint-md)
+                padding-top: 100px
+        &-3
+            padding-top: 20px
+    &-logo
+        position: absolute
+        top: 15%
+        left: 50%
+        width: 220px
+        max-width: 25%
+        img
+            width: 100%
+            height: auto

@@ -1,0 +1,41 @@
+.numbersBlock
+    padding-bottom: 110px
+    +max-screen(1050px)
+        padding-bottom: 60px
+    +max-screen($breakpoint-md)
+        padding-bottom: 60px
+    &__heading
+        padding-bottom: 48px
+    &__list
+        
+    &__item
+        padding-bottom: 80px
+        border-bottom: 5px solid #F5F9FA
+        transition: 0.3s
+        +max-screen($breakpoint-md)
+            padding-bottom: 40px
+            border-bottom: 0
+            border-left: 5px solid $color-primary
+            padding-left: 40px
+            &:nth-last-child(1)
+                padding-bottom: 0
+        &__inner
+            opacity: 0.15
+            transition: 0.3s
+            +max-screen($breakpoint-md)
+                opacity: 1
+        .numbersBlock__list:hover &.active, &.activePermanent
+            border-bottom: 5px solid $color-primary
+            +max-screen($breakpoint-md)
+                border-bottom: 0
+            .numbersBlock__item__inner
+                opacity: 1
+            
+        &__number
+            display: block
+            padding-bottom: 20px
+        &__title
+            padding-bottom: 20px
+        &__text
+            +max-screen($breakpoint-md)
+                max-width: 300px

@@ -1,0 +1,59 @@
+.partners-carousel
+    h2
+        +max-screen($breakpoint-xs)
+            width: min-content
+    &__wrapper
+        position: relative
+        margin-top: 60px
+        +max-screen($breakpoint-sm)
+            margin-top: 40px
+    &__arrows
+        display: flex
+        gap: 10px
+        position: absolute
+        top: -114px
+        right: 110px
+        +max-screen($breakpoint-lg)
+            top: calcFluidSize(-102, -114, $breakpoint-sm, $breakpoint-lg)
+            right: calcFluidSize(50, 80, $breakpoint-sm, $breakpoint-lg)
+        +max-screen($breakpoint-sm)
+            top: -84px
+            right: calcFluidSize(10, 60, 320, $breakpoint-sm)
+        +max-screen($breakpoint-xs)
+            
+        .button--arrow
+            width: 57px
+            height: 57px
+            padding: 0
+            +max-screen($breakpoint-lg)
+                width: calcFluidSize(45, 57, $breakpoint-sm, $breakpoint-lg)
+                height: calcFluidSize(45, 57, $breakpoint-sm, $breakpoint-lg)
+            +max-screen($breakpoint-sm)
+                width: 45px
+                height: 45px
+            +max-screen($breakpoint-xs)
+                width: 40px
+                height: 40px
+            &::after
+                margin-left: 0
+    &__item
+        padding: 0 10px
+    &__item-inner
+        position: relative
+        .logo-wrapper
+            position: absolute
+            margin: auto
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            width: 50%
+            height: max-content
+            z-index: 1
+    .slick-slide
+        transition: $default-transition
+        &:not(.slick-active)
+            opacity: 0.2
+    .slick-list
+        +max-screen($breakpoint-sm)
+            padding: 0 calcFluidSize(50, 100, 320, $breakpoint-md) !important

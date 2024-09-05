@@ -1,0 +1,35 @@
+.summary
+    &-dates
+        &__list
+            margin: -5px
+            flex-wrap: wrap
+        &__item
+            padding: 5px
+            min-width: 270px
+            +max-screen($breakpoint-sm)
+              width: 100%
+            &-inner
+                background: #FFFFFF
+                box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.05)
+                border-radius: 5px
+                padding: 15px
+                display: flex
+                justify-content: space-between
+            &-value
+                opacity: 0.6
+                margin-left: 8px
+    &-rooms-list__item
+        &-inner
+            background: #fff
+            +max-screen($breakpoint-sm)
+                flex-direction: column
+                row-gap: 20px
+        &__img
+            min-width: 170px
+            .image-ratio
+                padding-bottom: 100%!important
+        &__content
+            width: 100%
+        &__supplements
+            padding: 12px
+            background: transparentize(#003CC7, 0.96 )

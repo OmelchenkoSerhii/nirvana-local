@@ -1,0 +1,77 @@
+.package
+    &-main-info
+        background-color: #fff
+    &-rooms-list
+    
+    &-rooms-popup
+        .popup-block__container
+            max-width: 850px
+        .popup-block__close
+            background: transparentize(#003CC7, 0.96)
+            top: 20px
+            right: 20px
+        .slider-arrows
+            .button--arrow
+                right: 10px
+                top: 90px
+                bottom: auto
+                &.button--arrow-left
+                    left: 10px
+                    top: 90px
+                    bottom: auto
+            
+    &-room
+        display: none
+        &.active
+            display: block
+        &--popup
+            padding: 0 10px
+        &__inner
+            background-color: #fff
+            padding: 20px
+            display: flex
+            +max-screen($breakpoint-sm)
+                flex-wrap: wrap
+        &__info
+            width: 100%
+        &__image
+            width: 200px
+            min-width: 200px
+            margin-right: 20px
+            +max-screen($breakpoint-sm)
+                margin-right: auto
+                margin-left: auto
+                margin-bottom: 25px
+                width: 300px
+            &__img
+                position: relative
+                padding-bottom: 100%
+                overflow: hidden
+                img
+                    width: 100%
+                    height: 100%
+                    position: absolute
+                    top: 0
+                    left: 0
+                    object-fit: cover
+        &__upgrade-btn
+            cursor: pointer
+    &__buttons-bar
+        gap: 10px
+        background: #fff
+        &__item
+            width: 50%
+            a
+                width: 100%
+                +max-screen($breakpoint-sm)
+                    padding: 20px 10px
+
+.book-package-accommodation
+    &__container
+        max-width: 900px
+        margin: auto
+
+.package-info-content
+    .section
+        padding-top: 50px
+        padding-bottom: 50px

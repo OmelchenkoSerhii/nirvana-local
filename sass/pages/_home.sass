@@ -1,0 +1,46 @@
+.home
+    .page-blocks 
+        > section:first-of-type
+            .button--scroll-down
+                position: absolute
+                left: 0
+                right: 0
+                margin: auto
+                bottom: -269px
+                +max-screen($breakpoint-lg)
+                    bottom: -189px
+                +max-screen($breakpoint-md)
+                    bottom: -164px
+    .icons-section
+        &__list
+            gap: 50px 0
+            margin-top: 80px
+            .content-block
+                +min-screen($breakpoint-sm)
+                    margin-top: -15px
+                h3
+                    max-width: 200px
+                    margin: 0 auto
+    .newsletter
+        .col-12
+            padding: 0
+        .contentImageBlock
+            &__content
+                background-color: $color-light-orange
+                &__inner
+                    display: flex
+                    height: 100%
+                    padding: 20px 13.5%
+                    +max-screen($breakpoint-lg)
+                        padding: 30px calcFluidSize(25, 60, $breakpoint-md, $breakpoint-lg)
+                    +max-screen($breakpoint-md)
+                        padding: 30px
+                    .content-block
+                        margin: auto
+                        h2
+                            font-weight: 900
+            &__image
+                +max-screen($breakpoint-sm)
+                    display: none
+                    
+

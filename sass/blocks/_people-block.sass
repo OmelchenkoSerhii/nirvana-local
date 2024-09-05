@@ -1,0 +1,46 @@
+.people-block
+    &__list
+        margin-top: 93px
+        +max-screen($breakpoint-md)
+            margin-top: 40px
+    &__item
+        margin-bottom: 20px
+        +max-screen(700px)
+            
+        +max-screen($breakpoint-sm)
+            
+        &__inner
+            display: flex
+            background-color: $color-bg-white-light
+            align-items: inherit
+            +max-screen($breakpoint-lg)
+                align-items: center
+            +max-screen(700px)
+                flex-direction: column
+        &__img-wrapper
+            width: 42%
+            min-width: 42%
+            +max-screen(700px)
+                width: 100%
+        &__img
+            position: relative
+            //padding-bottom: 100%
+            height: 100%
+            overflow: hidden
+            +max-screen($breakpoint-lg)
+                padding-bottom: 100%
+        &__image
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            +max-screen(700px)
+                
+        &__title
+            margin-bottom: 10px
+        &__content
+            &__wrapper
+                padding: 20px
+                

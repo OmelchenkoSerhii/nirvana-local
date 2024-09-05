@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://schemas.comtec-europe.net/tlce/2011/03" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://schemas.comtec-europe.net/tlce/2011/03" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.comtec-europe.net/tlce/2011/03/Imports">
+      <xsd:import schemaLocation="TravelinkCEService_1.xsd" namespace="http://schemas.comtec-europe.net/tlce/2011/03"/>
+      <xsd:import schemaLocation="TravelinkCEService.xsd" namespace="http://www.opentravel.org/OTA/2003/05"/>
+      <xsd:import schemaLocation="TravelinkCEService_2.xsd" namespace="http://microsoft.com/wsdl/types/"/>
+      <xsd:import schemaLocation="TravelinkCEService_3.xsd"/>
+      <xsd:import schemaLocation="TravelinkCEService_4.xsd" namespace="http://schemas.comtec-europe.net/webapi/channelmanager"/>
+      <xsd:import schemaLocation="TravelinkCEService_5.xsd" namespace="http://schemas.comtec-europe.net/webapi/common"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITravelinkService_GetStaticData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticData"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetStaticData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_BookingSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_BookingSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_AgentLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgentLogin"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_AgentLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgentLoginResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_BookingManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingManagement"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_BookingManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingManagementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ValidatePostCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidatePostCode"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ValidatePostCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidatePostCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocument"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetAccommodationChangesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccommodationChangesList"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetAccommodationChangesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccommodationChangesListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetAgentGroupMarkup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgentGroupMarkup"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetAgentGroupMarkup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgentGroupMarkupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_SetAgentGroupMarkup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetAgentGroupMarkup"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_SetAgentGroupMarkup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetAgentGroupMarkupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ValidateCreditCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCreditCard"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ValidateCreditCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCreditCardResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ReceiptTypesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiptTypesList"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ReceiptTypesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiptTypesListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FlightFareRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:FlightFareRules"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FlightFareRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FlightFareRulesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_UserManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserManagement"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_UserManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserManagementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_DynamicPackageSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DynamicPackageSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_DynamicPackageSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DynamicPackageSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_DynamicPackageSearchFollowOn_InputMessage">
+    <wsdl:part name="parameters" element="tns:DynamicPackageSearchFollowOn"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_DynamicPackageSearchFollowOn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DynamicPackageSearchFollowOnResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TwinCentreSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:TwinCentreSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TwinCentreSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TwinCentreSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TwinCentreFollowonFlightsSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:TwinCentreFollowonFlightsSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TwinCentreFollowonFlightsSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TwinCentreFollowonFlightsSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TwinCentreFollowonAccomodationSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:TwinCentreFollowonAccomodationSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TwinCentreFollowonAccomodationSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TwinCentreFollowonAccomodationSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_QuoteManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteManagement"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_QuoteManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteManagementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CruiseSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CruiseSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CruiseSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CruiseSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_Amex_InputMessage">
+    <wsdl:part name="parameters" element="tns:Amex"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_Amex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AmexResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CruiseBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:CruiseBasket"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CruiseBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CruiseBasketResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ClientManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClientManagement"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ClientManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClientManagementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetSeatMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatMap"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetSeatMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatMapResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_SetFlightSeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFlightSeat"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_SetFlightSeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetFlightSeatResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_AccommodationGridSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccommodationGridSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_AccommodationGridSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccommodationGridSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CruiseInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CruiseInfo"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CruiseInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CruiseInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FlightMarkup_InputMessage">
+    <wsdl:part name="parameters" element="tns:FlightMarkup"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FlightMarkup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FlightMarkupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_LeadInPackagePriceSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeadInPackagePriceSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_LeadInPackagePriceSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeadInPackagePriceSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_PaymentServiceManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentServiceManagement"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_PaymentServiceManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentServiceManagementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_BrochureRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:BrochureRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_BrochureRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BrochureRequestResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CarParkSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarParkSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_CarParkSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarParkSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ChannelManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChannelManagement"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ChannelManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChannelManagementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_AirportLoungesSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:AirportLoungesSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_AirportLoungesSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AirportLoungesSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_Reports_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reports"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_Reports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ToursSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ToursSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_ToursSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ToursSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TourComponentSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:TourComponentSearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_TourComponentSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TourComponentSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetTourCoachSeatPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTourCoachSeatPlan"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_GetTourCoachSeatPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTourCoachSeatPlanResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_HomeConnectCharges_InputMessage">
+    <wsdl:part name="parameters" element="tns:HomeConnectCharges"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_HomeConnectCharges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HomeConnectChargesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FerrySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:FerrySearch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FerrySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FerrySearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FerryPriceValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:FerryPriceValidation"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_FerryPriceValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FerryPriceValidationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_PriceMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceMatch"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_PriceMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceMatchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_PreBookingChecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreBookingChecks"/>
+  </wsdl:message>
+  <wsdl:message name="ITravelinkService_PreBookingChecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreBookingChecksResponse"/>
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="ITravelinkService">
+    <wsdl:operation name="GetStaticData">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetStaticData" message="tns:ITravelinkService_GetStaticData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetStaticDataResponse" message="tns:ITravelinkService_GetStaticData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="BookingSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BookingSearch" message="tns:ITravelinkService_BookingSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BookingSearchResponse" message="tns:ITravelinkService_BookingSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="AgentLogin">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AgentLogin" message="tns:ITravelinkService_AgentLogin_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AgentLoginResponse" message="tns:ITravelinkService_AgentLogin_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="BookingManagement">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BookingManagement" message="tns:ITravelinkService_BookingManagement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BookingManagementResponse" message="tns:ITravelinkService_BookingManagement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePostCode">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ValidatePostCode" message="tns:ITravelinkService_ValidatePostCode_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ValidatePostCodeResponse" message="tns:ITravelinkService_ValidatePostCode_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetDocument" message="tns:ITravelinkService_GetDocument_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetDocumentResponse" message="tns:ITravelinkService_GetDocument_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccommodationChangesList">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetAccommodationChangesList" message="tns:ITravelinkService_GetAccommodationChangesList_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetAccommodationChangesListResponse" message="tns:ITravelinkService_GetAccommodationChangesList_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentGroupMarkup">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetAgentGroupMarkup" message="tns:ITravelinkService_GetAgentGroupMarkup_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetAgentGroupMarkupResponse" message="tns:ITravelinkService_GetAgentGroupMarkup_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SetAgentGroupMarkup">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/SetAgentGroupMarkup" message="tns:ITravelinkService_SetAgentGroupMarkup_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/SetAgentGroupMarkupResponse" message="tns:ITravelinkService_SetAgentGroupMarkup_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCreditCard">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ValidateCreditCard" message="tns:ITravelinkService_ValidateCreditCard_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ValidateCreditCardResponse" message="tns:ITravelinkService_ValidateCreditCard_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiptTypesList">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ReceiptTypesList" message="tns:ITravelinkService_ReceiptTypesList_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ReceiptTypesListResponse" message="tns:ITravelinkService_ReceiptTypesList_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FlightFareRules">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FlightFareRules" message="tns:ITravelinkService_FlightFareRules_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FlightFareRulesResponse" message="tns:ITravelinkService_FlightFareRules_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UserManagement">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/UserManagement" message="tns:ITravelinkService_UserManagement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/UserManagementResponse" message="tns:ITravelinkService_UserManagement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DynamicPackageSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/DynamicPackageSearch" message="tns:ITravelinkService_DynamicPackageSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/DynamicPackageSearchResponse" message="tns:ITravelinkService_DynamicPackageSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DynamicPackageSearchFollowOn">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/DynamicPackageSearchFollowOn" message="tns:ITravelinkService_DynamicPackageSearchFollowOn_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/DynamicPackageSearchFollowOnResponse" message="tns:ITravelinkService_DynamicPackageSearchFollowOn_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TwinCentreSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreSearch" message="tns:ITravelinkService_TwinCentreSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreSearchResponse" message="tns:ITravelinkService_TwinCentreSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TwinCentreFollowonFlightsSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreFollowonFlightsSearch" message="tns:ITravelinkService_TwinCentreFollowonFlightsSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreFollowonFlightsSearchResponse" message="tns:ITravelinkService_TwinCentreFollowonFlightsSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TwinCentreFollowonAccomodationSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreFollowonAccomodationSearch" message="tns:ITravelinkService_TwinCentreFollowonAccomodationSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TwinCentreFollowonAccomodationSearchResponse" message="tns:ITravelinkService_TwinCentreFollowonAccomodationSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QuoteManagement">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/QuoteManagement" message="tns:ITravelinkService_QuoteManagement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/QuoteManagementResponse" message="tns:ITravelinkService_QuoteManagement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CruiseSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseSearch" message="tns:ITravelinkService_CruiseSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseSearchResponse" message="tns:ITravelinkService_CruiseSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Amex">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/Amex" message="tns:ITravelinkService_Amex_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AmexResponse" message="tns:ITravelinkService_Amex_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CruiseBasket">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseBasket" message="tns:ITravelinkService_CruiseBasket_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseBasketResponse" message="tns:ITravelinkService_CruiseBasket_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ClientManagement">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ClientManagement" message="tns:ITravelinkService_ClientManagement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ClientManagementResponse" message="tns:ITravelinkService_ClientManagement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatMap">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetSeatMap" message="tns:ITravelinkService_GetSeatMap_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetSeatMapResponse" message="tns:ITravelinkService_GetSeatMap_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SetFlightSeat">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/SetFlightSeat" message="tns:ITravelinkService_SetFlightSeat_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/SetFlightSeatResponse" message="tns:ITravelinkService_SetFlightSeat_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="AccommodationGridSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AccommodationGridSearch" message="tns:ITravelinkService_AccommodationGridSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AccommodationGridSearchResponse" message="tns:ITravelinkService_AccommodationGridSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CruiseInfo">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseInfo" message="tns:ITravelinkService_CruiseInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CruiseInfoResponse" message="tns:ITravelinkService_CruiseInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FlightMarkup">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FlightMarkup" message="tns:ITravelinkService_FlightMarkup_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FlightMarkupResponse" message="tns:ITravelinkService_FlightMarkup_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="LeadInPackagePriceSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/LeadInPackagePriceSearch" message="tns:ITravelinkService_LeadInPackagePriceSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/LeadInPackagePriceSearchResponse" message="tns:ITravelinkService_LeadInPackagePriceSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentServiceManagement">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PaymentServiceManagement" message="tns:ITravelinkService_PaymentServiceManagement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PaymentServiceManagementResponse" message="tns:ITravelinkService_PaymentServiceManagement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="BrochureRequest">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BrochureRequest" message="tns:ITravelinkService_BrochureRequest_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/BrochureRequestResponse" message="tns:ITravelinkService_BrochureRequest_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CarParkSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CarParkSearch" message="tns:ITravelinkService_CarParkSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/CarParkSearchResponse" message="tns:ITravelinkService_CarParkSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChannelManagement">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ChannelManagement" message="tns:ITravelinkService_ChannelManagement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ChannelManagementResponse" message="tns:ITravelinkService_ChannelManagement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="AirportLoungesSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AirportLoungesSearch" message="tns:ITravelinkService_AirportLoungesSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/AirportLoungesSearchResponse" message="tns:ITravelinkService_AirportLoungesSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Reports">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/Reports" message="tns:ITravelinkService_Reports_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ReportsResponse" message="tns:ITravelinkService_Reports_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ToursSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ToursSearch" message="tns:ITravelinkService_ToursSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/ToursSearchResponse" message="tns:ITravelinkService_ToursSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TourComponentSearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TourComponentSearch" message="tns:ITravelinkService_TourComponentSearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/TourComponentSearchResponse" message="tns:ITravelinkService_TourComponentSearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTourCoachSeatPlan">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetTourCoachSeatPlan" message="tns:ITravelinkService_GetTourCoachSeatPlan_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/GetTourCoachSeatPlanResponse" message="tns:ITravelinkService_GetTourCoachSeatPlan_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="HomeConnectCharges">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/HomeConnectCharges" message="tns:ITravelinkService_HomeConnectCharges_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/HomeConnectChargesResponse" message="tns:ITravelinkService_HomeConnectCharges_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FerrySearch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FerrySearch" message="tns:ITravelinkService_FerrySearch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FerrySearchResponse" message="tns:ITravelinkService_FerrySearch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FerryPriceValidation">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FerryPriceValidation" message="tns:ITravelinkService_FerryPriceValidation_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/FerryPriceValidationResponse" message="tns:ITravelinkService_FerryPriceValidation_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PriceMatch">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PriceMatch" message="tns:ITravelinkService_PriceMatch_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PriceMatchResponse" message="tns:ITravelinkService_PriceMatch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PreBookingChecks">
+      <wsdl:input wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PreBookingChecks" message="tns:ITravelinkService_PreBookingChecks_InputMessage"/>
+      <wsdl:output wsaw:Action="http://schemas.comtec-europe.net/tlce/2011/03/ITravelinkService/PreBookingChecksResponse" message="tns:ITravelinkService_PreBookingChecks_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

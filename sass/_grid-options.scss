@@ -1,0 +1,78 @@
+//
+// Grid Options
+//
+// To avoid your options getting overridden by an update,
+// copy and paste the below options to your own sass file
+// and include it before this file.
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: $breakpoint-sm,
+        md: $breakpoint-md,
+        lg: $breakpoint-lg,
+        xl: $breakpoint-xl
+) ;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 768px,
+        md: 992px,
+        lg: 1280px,
+        xl: 1281px
+) ;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: $grid-gutter;
+
+// END of Grid Options
+
+$spacer: 10px;
+$spacers: ();
+$spacers: map-merge(
+        (
+    0: 0,
+    1: ($spacer * 1),
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    6: ($spacer * 6),
+    7: ($spacer * 7),
+    8: ($spacer * 8),
+    9: ($spacer * 9),
+    10: ($spacer * 10),
+    11: ($spacer * 11),
+    12: ($spacer * 12),
+    13: ($spacer * 13),
+    14: ($spacer * 14),
+    15: ($spacer * 15),
+    16: ($spacer * 16),
+    17: ($spacer * 17),
+    18: ($spacer * 18),
+    19: ($spacer * 19),
+    20: ($spacer * 20),
+    21: ($spacer * 21),
+    22: ($spacer * 22),
+    23: ($spacer * 23),
+    24: ($spacer * 24),
+    25: ($spacer * 25),
+    26: ($spacer * 26),
+    27: ($spacer * 27),
+    28: ($spacer * 28),
+    29: ($spacer * 29),
+    30: ($spacer * 30),
+  ),
+  $spacers
+);

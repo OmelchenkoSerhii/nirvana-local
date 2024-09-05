@@ -1,0 +1,31 @@
+.gallery
+    padding-top: 110px
+    padding-bottom: 110px
+    +max-screen($breakpoint-md)
+        padding-top: 65px
+        padding-bottom: 65px
+    &__title
+        font-size: 70px
+        text-transform: uppercase
+        margin-bottom: 30px
+        +max-screen($breakpoint-md)
+            font-size: 45px
+            margin-bottom: 25px
+    &__arrows
+        margin-bottom: 80px
+        +max-screen($breakpoint-md)
+            margin-bottom: 40px
+    &__list
+        margin-left: -20px
+        margin-right: -20px
+    &__img
+        width: 100%
+        height: 600px
+        object-fit: cover
+        +max-screen($breakpoint-md)
+            height: 450px
+    .slick-slide
+        margin-left: 10px
+        margin-right: 10px
+    &__prev
+        transform: rotate(180deg)

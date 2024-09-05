@@ -1,0 +1,5 @@
+i.mce-i-shortcodes:before{
+	content: "\f538"; /* выбираем иконку и узнаем ее код тут https://developer.wordpress.org/resource/dashicons/ */
+	font-family:'dashicons';
+	font-size:20px; /* можно подкорректировать размер шрифта, если не устраивает*/
+}

@@ -1,0 +1,52 @@
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap{
+    background-color: #29255B;
+}
+#wpadminbar{
+    background-color: #29255B;
+}
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-wp-logo .ab-icon{
+    width: 55px;
+    height: 22px;
+}
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-wp-logo .ab-icon:before{
+    content: '';
+    background-image: url(./logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 63px;
+    height: 22px;
+    background-position: center;
+    display: inline-block;
+
+}
+
+
+/*API Bookings Styling*/
+.wp-booking-table{
+    border: 1px solid grey;
+}
+.wp-booking-table__row{
+    padding: 0 0;
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: center;
+}
+.wp-booking-table__cell{
+    width: 100%;
+    padding: 10px;
+    border-right: 1px solid grey;
+}
+.wp-booking-table__cell:nth-last-child(1){
+    border-right: 0;
+}
+.wp-booking-dropdown_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wp-booking-dropdown .toggle-indicator{
+    transform: rotate(180deg);
+}
+.wp-booking-dropdown.active .toggle-indicator{
+    transform: rotate(0deg);
+}

@@ -1,0 +1,44 @@
+.textImageBanner
+    height: auto
+    //min-height: 75vh
+    .page-blocks > &
+        .textImageBanner__image
+            margin-top: 122px
+            +max-screen(1100px)
+                margin-top: 70px
+    &--offset
+        margin-bottom: 55px
+    &__content
+        padding-top: 200px
+        padding-bottom: 200px
+        min-height: 760px
+        +max-screen($breakpoint-lg)
+            padding-top: 150px
+            padding-bottom: 150px
+            min-height: 550px
+        +max-screen($breakpoint-md)
+            padding-top: 100px
+            padding-bottom: 57px
+            min-height: auto
+    &__image
+        position: relative
+        width: 50vw
+        height: 100%
+        +max-screen($breakpoint-md)
+            width: 100%
+            height: auto
+            padding-bottom: 110%
+        .textImageBanner--offset &
+            transform: translateY(125px)
+            +max-screen($breakpoint-md)
+                transform: translateY(0)
+                margin-bottom: -50px
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            +max-screen($breakpoint-md)
+                //position: relative

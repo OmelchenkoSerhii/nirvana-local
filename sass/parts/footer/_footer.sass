@@ -1,0 +1,30 @@
+.footer
+    background-color: $color-bg-dark
+    &__main
+        &__nav
+            +screen($breakpoint-md, $breakpoint-lg)
+                padding: 0 10%
+            #footer-nav
+                display: flex
+                flex-wrap: wrap
+                gap: 28px 0
+                .menu-item
+                    flex-basis: 50%
+                    a
+                        transition: $default-transition
+                        &:hover
+                            color: $color-light-orange
+        &__social__list
+            margin-top: 26px
+            li
+                i
+                    font-size: 23px
+                    color: $color-light-orange
+                    transition: $default-transition
+                &:hover
+                    i
+                        color: $color-light
+    &__bottom
+        padding-top: 30px
+        padding-bottom: 30px
+    

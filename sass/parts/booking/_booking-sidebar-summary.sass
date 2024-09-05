@@ -1,0 +1,79 @@
+.booking-summary
+    display: flex
+    flex-direction: column
+    height: 100vh
+    padding-top: 50px
+    position: sticky
+    top: 0
+    width: 310px
+    min-width: 310px
+    background: $color-dark
+    transition: $default-transition
+    .page-template-template-api-booking-type & , .page-template-template-api-book &
+        //padding-top: 50px
+    +max-screen($breakpoint-xl)
+      left: 0
+      transform: translateX(100vw)
+      position: fixed
+      &.active
+        transform: translateX(calc(100vw - 100%))
+    h2
+        padding: 0 30px
+    h3
+        margin-bottom: 10px
+        font-size: 12px
+        line-height: normal
+        opacity: 0.5
+        text-transform: uppercase
+    &__inner
+        overflow: auto
+        padding-left: 30px
+        padding-right: 30px
+    &__divider
+        height: 1px
+        border: none
+        background-color: $color-bg-light
+        margin: 30px -30px
+    &__cost
+        margin: 0
+        padding: 35px 20px
+        border-top: 1px solid $color-bg-light
+        border-bottom: 1px solid $color-bg-light
+    &__logo
+        position: relative
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        overflow: hidden
+        padding-bottom: 0
+        min-width: 50px
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height:  100%
+            object-fit: contain
+    .js-basket-remove
+        min-width: 16px
+        margin-right: 5px
+        cursor: pointer
+
+        img
+            width: 16px
+            height: auto
+    &__loading
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(255,255,255,0.2)
+        img
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 70px
+            height: 70px
+            transform: translate3d(-50%,-50%,0)
+        

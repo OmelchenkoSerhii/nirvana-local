@@ -1,0 +1,30 @@
+.imagesSlider
+    overflow: hidden
+
+    .images-slider
+        margin-top: 40px
+        margin-left: -10px
+        margin-right: -10px
+        &__item
+            padding: 0 10px
+            text-align: center
+        .slick-slide
+            transition: $default-transition
+            &:not(.slick-active)
+                opacity: 0.2
+        
+        &__nav
+            text-align: center
+            margin-top: 20px
+            &__btn
+                cursor: pointer
+                width: 57px
+                height: 57px
+                background: $color-light-orange
+                transition: 0.3s
+                &:hover
+                    background: $color-dark
+                &::after
+                    flex-shrink: 0
+                    margin-left: 0
+

@@ -1,0 +1,462 @@
+.order-form
+    position: relative
+    z-index: 5
+    *
+        font-family: $font-family-base
+    &__row
+        display: flex
+        row-gap: 15px
+        margin: -5px
+        flex-wrap: wrap
+        +max-screen($breakpoint-md)
+            flex-wrap: wrap
+        .order-payment &
+            flex-wrap: nowrap
+            +max-screen($breakpoint-md)
+                flex-wrap: wrap
+        .order-form__field
+            padding: 5px
+            +max-screen($breakpoint-lg)
+                width: auto
+            +max-screen(475px)
+                width: 100%
+                input, select
+                    width: 100%
+    +max-screen($breakpoint-md)
+        .order-form__field
+            width: 100%
+            input
+                width: 100% !important
+    &__errors
+        color: red
+    &__field
+        padding: 5px 0
+        min-width: 115px
+        &.currency-field-wrapper
+            min-width: unset
+        label
+            font-size: 16px
+            line-height: 1.2em
+            margin-bottom: 8px
+            display: block
+        input
+            display: block
+            
+        input[type="text"]
+            -webkit-appearance: none
+            height: 50px
+            border-radius: 5px
+            background: #fff
+            border: 1px solid rgba(0, 12, 38, 0.6)
+            font-size: 16px
+            line-height: 1.1em
+            padding: 15px
+        textarea
+            font-size: 16px
+            line-height: 1.1em
+            padding: 15px
+            background: #FFFFFF
+            box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.05)
+            border-radius: 10px
+            border: 0
+            width: 100%
+            resize: none
+        .select
+            -webkit-appearance: none
+            height: 50px
+            border-radius: 5px
+            background: #fff
+            border: 1px solid rgba(0, 12, 38, 0.6)
+            font-size: 16px
+            line-height: 1.1em
+            padding: 15px
+            padding-right: 35px
+            background-image: url(../assets/images/dropdown-arrow.svg)
+            background-size: 10px 10px
+            background-position: right 15px center
+            background-repeat: no-repeat
+            cursor: pointer
+        button,.submit
+            -webkit-appearance: none
+            height: 50px
+            border-radius: 0
+            background: $color-light-orange
+            border: 1px solid $color-light-orange
+            font-size: 14px
+            font-weight: 700
+            line-height: 1.1em
+            padding: 15px 30px
+            text-transform: uppercase
+            color: #fff
+            margin-top: auto
+            display: inline-block
+
+.custom-select
+    width: 100%
+    position: relative
+    select
+        display: none
+
+    .selected-item
+        height: 50px
+        border-radius: 5px
+        background: #fff
+        border: 1px solid rgba(0, 12, 38, 0.6)
+        font-size: 16px
+        line-height: 1.1em
+        padding: 15px
+        padding-right: 35px
+        cursor: pointer
+        &:after
+            content: ''
+            background-image: url(../assets/images/dropdown-arrow.svg)
+            width: 10px
+            height: 10px
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+            position: absolute
+            right: 10px
+            top: 50%
+            transform: translateY(-50%)
+            transition: 0.5s
+        .flag
+            width: 20px
+            height: auto
+            margin-left: 8px
+            margin-top: -2px
+
+    .item 
+        padding: 15px
+        border-top: 1px solid rgba(0, 12, 38, 0.6)
+        font-size: 16px
+        transition: 0.3s
+        cursor: pointer
+        &:hover 
+            background: rgba(0, 12, 38, 0.05)
+        .flag
+            width: 20px
+            height: auto
+            margin-left: 8px
+            margin-top: 1px
+    .all-items
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        z-index: 100
+        border-radius: 5px
+        border: 1px solid rgba(0, 12, 38, 0.6)
+        background: #FFF
+        max-height: 150px
+        overflow: auto
+    .all-items-hide
+        display: none
+
+
+.dropdown-field
+    position: relative
+    &__header
+        position: relative
+        height: 50px
+        border-radius: 5px
+        background: #fff
+        border: 1px solid rgba(0, 12, 38, 0.6)
+        font-size: 16px
+        line-height: 1.2em
+        padding: 15px
+        padding-right: 40px
+        cursor: pointer
+        white-space: nowrap
+        overflow: hidden
+        span
+            margin-right: 5px
+        &-icon
+            position: absolute
+            top: 50%
+            right: 15px
+            width: 10px
+            height: 10px
+            transform: translateY(-50%)
+            transition: 0.3s
+            svg
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                object-fit: contain
+            .opened &
+                transform: translateY(-50%) rotate(180deg)
+    &__content
+        display: none
+        position: absolute
+        width: 340px
+        top: 100%
+        left: 0
+        margin-top: 15px
+        padding: 20px
+        border-radius: 10px
+        background: #fff
+        box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.1)
+        &-inner
+            width: 100%
+
+.people-field
+    .dropdown-field__content
+        max-height: 300px
+        overflow: auto
+        z-index: 1
+        max-width: 100%
+        +scrollbar
+            width: 3px
+            border-radius: 20px
+            background: none
+            outline: none
+            border: none
+        +scrollbar-thumb
+            background-color: $color-light-orange
+            border-radius: 20px
+    .js-remove-room
+        cursor: pointer
+        color: $color-light-orange
+    &__qtt
+        margin-bottom: 20px
+        &:nth-last-child(1)
+            margin-bottom: 0
+        &-inner
+            display: flex
+            align-items: center
+            justify-content: space-between
+        &__label
+            font-size: 16px
+            .small
+                font-size: 12px
+                line-height: 1em
+                display: block
+                opacity: 0.6
+        &__select
+            display: flex
+            align-items: center
+            span
+                width: 30px
+                height: 30px
+                display: flex
+                align-items: center
+                justify-content: center
+                color: #fff
+                background: $color-light-orange
+                cursor: pointer
+                &.disabled
+                    background-color: transparentize(#003CC7, 0.96)
+                    color: transparentize(#003CC7, 0.96)
+            input
+                border: 0
+                border-radius: 0
+                -webkit-appearance: none
+                font-size: 16px
+                text-align: center
+                margin: 0 10px
+                max-width: 45px
+        &__ages
+            background-color: transparentize(#003CC7, 0.96)
+            padding: 15px
+            border-radius: 10px
+            margin-top: 20px
+            display: none
+            li
+                display: flex
+                align-items: center
+                justify-content: space-between
+                margin-bottom: 10px
+                font-size: 16px
+                &:nth-last-child(1)
+                    margin-bottom: 0
+                .top
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                .select,.number
+                    height: 31px
+                    border-radius: 5px
+                    border: 1px solid rgba(0, 12, 38, 0.6)
+                    padding: 5px 10px
+                    padding-right: 40px
+                    font-size: 16px
+                    color: transparentize($color-dark, 0.4)
+                .number
+                    padding-right: 10px
+                    max-width: 50%
+                .text-fields
+                    input
+                        font-size: 16px
+                        color: transparentize($color-dark, 0.4)
+                        padding: 10px
+                        height: 32px
+                        width: 100%
+                        margin-top: 8px
+
+                    
+
+
+.datepicker
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    &__field
+        &-inner
+            position: relative
+            display: block
+            svg
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                right: 15px
+                width: 20px
+                height: 20px
+                object-fit: contain
+    &__nights
+        position: absolute
+        bottom: -20px
+        right: 0
+        font-size: 14px
+    &.active
+        input
+            border: 1px solid $color-light-orange
+.daterangepicker
+    *
+        color: #000c26
+.daterangepicker.ltr
+    border-radius: 10px
+    background: #fff
+    box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.1)
+    border: 0
+    color: $color-dark
+    padding: 12px
+    width: Min(356px, 100%)
+    overflow-x: auto
+    &:before
+        content: none
+    .month
+        text-transform: uppercase
+        font-size: 12px
+        line-height: 1.1em
+        font-weight: 700
+    .btn
+        -webkit-appearance: none
+        height: 40px
+        padding: 6px 15px
+        border: 1px solid $color-light-orange
+        background-color: $color-light-orange
+        color: $color-light
+        font-family: $font-family-base
+        &:hover
+            background-color: $color-light
+            color: $color-light-orange
+    .drp-calendar
+        max-width: 380px
+    .drp-calendar.right
+        padding-left: 50px
+    .calendar-table
+        thead
+            th
+                height: 30px
+                width: 30px
+                min-width: 30px
+                &.prev
+                    span
+                        margin-left: 3px
+                &.next
+                    span
+                        margin-right: 3px
+            tr
+                &:nth-last-child(1)
+                    th
+                        height: 50px
+        .drp-calendar
+            padding: 0
+        
+        td
+            min-width: 45px
+            width: 45px
+            height: 30px
+            line-height: 24px
+            font-size: 12px
+            &.in-range
+                background-color: #E5E6E9
+            &.active, &.active:hover
+                background-color: $color-dark
+                color: #fff
+        .prev,.next
+            width: 45px
+            height: 45px
+            background-color: $color-light-orange
+            border-radius: 0px
+        .prev
+            span
+                border: solid #fff
+                border-width: 0 2px 2px 0
+        .next
+            span
+                border: solid #fff
+                border-width: 0 2px 2px 0
+    
+
+.checkbox-style
+    position: relative
+    line-height: 0
+    &-wrapper
+        height: 50px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        margin-top: 5px
+    input[type="checkbox"],input[type="radio"]
+        position: absolute
+        opacity: 0
+        visibility: hidden
+        &:checked
+            &~.checkbox-style__pseudo
+                background: #F47920
+                border: 1px solid #F47920
+                .mandatory &
+                    background: rgba(0, 12, 38, 0.25)
+                    border: 1px solid rgba(0, 12, 38, 0.25)
+                &:before
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate3d(-50%,-50%,0) rotate(180deg)
+                    background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.31807 5.84953L1.61096 6.55664L3.73228 8.67796L4.43939 9.38507L5.1465 8.67796L10.0962 3.72821L9.38914 3.02111L4.43939 7.97085L2.31807 5.84953Z' fill='white'/%3E%3Cpath d='M1.61096 6.55664L1.25741 6.20309L0.903855 6.55664L1.25741 6.91019L1.61096 6.55664ZM2.31807 5.84953L2.67162 5.49598L2.31807 5.14243L1.96452 5.49598L2.31807 5.84953ZM4.43939 9.38507L4.08584 9.73862L4.43939 10.0922L4.79294 9.73862L4.43939 9.38507ZM10.0962 3.72821L10.4498 4.08177L10.8033 3.72821L10.4498 3.37466L10.0962 3.72821ZM9.38914 3.02111L9.74269 2.66755L9.38914 2.314L9.03558 2.66755L9.38914 3.02111ZM4.43939 7.97085L4.08584 8.32441L4.43939 8.67796L4.79294 8.32441L4.43939 7.97085ZM1.96452 6.91019L2.67162 6.20309L1.96452 5.49598L1.25741 6.20309L1.96452 6.91019ZM4.08584 8.32441L1.96452 6.20309L1.25741 6.91019L3.37873 9.03151L4.08584 8.32441ZM4.79294 9.03151L4.08584 8.32441L3.37873 9.03151L4.08584 9.73862L4.79294 9.03151ZM4.79294 8.32441L4.08584 9.03151L4.79294 9.73862L5.50005 9.03151L4.79294 8.32441ZM9.74269 3.37466L4.79294 8.32441L5.50005 9.03151L10.4498 4.08177L9.74269 3.37466ZM9.03558 3.37466L9.74269 4.08177L10.4498 3.37466L9.74269 2.66755L9.03558 3.37466ZM4.79294 8.32441L9.74269 3.37466L9.03558 2.66755L4.08584 7.6173L4.79294 8.32441ZM1.96452 6.20309L4.08584 8.32441L4.79294 7.6173L2.67162 5.49598L1.96452 6.20309Z' fill='white'/%3E%3C/svg%3E%0A")
+                    width: 10px
+                    height: 10px
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: contain
+    .number
+        -webkit-appearance: none
+        border: 0
+        border-bottom: 1px solid $color-dark
+        color: $color-dark
+        background: transparent
+        padding: 5px 10px
+        font-family: $font-family-base
+        font-size: 16px
+    &__pseudo
+        background: rgba(0, 60, 199, 0.04)
+        border: 1px solid rgba(0, 12, 38, 0.25)
+        border-radius: 5px
+        transform: rotate(180deg)
+        width: 20px
+        height: 20px
+        display: inline-block
+
+.order-dates--flights
+    .order-form
+        &__way
+            input
+                max-width: 165px
+        .datepicker
+            input
+                max-width: 141px

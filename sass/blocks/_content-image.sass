@@ -1,0 +1,119 @@
+.contentImageBlock
+    &--full
+        padding-top: 0
+        padding-bottom: 0
+        +max-screen($breakpoint-md)
+            padding-top: 60px
+    &__content
+        position: relative
+        z-index: 2
+        .contentImageBlock--left &
+            order: 2
+            +max-screen($breakpoint-md)
+                order: 0
+        &__inner
+            // max-width: 260px
+        .content-block
+            ul
+                li
+                    &::before
+                        background-color: $color-light-orange
+            
+    &__image
+        position: relative
+        +max-screen($breakpoint-md)
+            order: 2
+            padding-top: rem(40px)
+        &__inner
+            position: relative
+            .contentImageBlock__image--full &
+                width: 50vw
+                float: right
+                +max-screen($breakpoint-md)
+                    width: calc(100% + 60px)
+                    margin-left: -30px
+                    margin-right: -30px
+                    float: none
+                .contentImageBlock--right &
+                    float: left
+                    +max-screen($breakpoint-md)
+                        float: none
+            .image-ratio
+                height: 100%
+            .contentImageBlock--wrapped &
+                height: 100%
+    
+    &__buttons
+        display: flex
+        flex-wrap: wrap
+        margin: -8px
+        a
+            margin: 8px
+            width: 212px
+            max-width: 100%
+            text-align: center
+    
+    &__image-icon
+        &__img
+            width: 80%
+        &__text-block
+            display: inline-block
+            margin-left: auto
+            margin-right: 0
+            float: right
+            margin-top: -140px
+            padding: 45px
+            text-align: center
+            background-color: white
+            color: $accent-text-color
+            z-index: 2
+            position: relative
+            +max-screen($breakpoint-lg)
+                padding: 30px
+                margin-top: -100px
+            +max-screen($breakpoint-md)
+                padding-top: -80px
+            &__top
+                font-size: 136px
+                font-weight: 600
+                letter-spacing: 0
+                line-height: 0.8em
+                display: inline-block
+                font-weight: 700
+                +max-screen($breakpoint-lg)
+                    font-size: 100px
+                +max-screen($breakpoint-md)
+                    font-size: 80px
+        &__icon-block
+            width: 45%
+            padding-bottom: 45%
+            display: inline-block
+            margin-left: auto
+            margin-right: 0
+            float: right
+            margin-top: -90px
+            position: relative
+            img
+                position: absolute
+                top: 32%
+                left: 32%
+                width: 36%
+                height: 36%
+                object-fit: contain
+
+
+
+.step
+    padding: 5px 10px
+    background: rgba(182, 107, 168, 0.1)
+    color: #B66BA8
+    font-size: 16px
+    width: fit-content
+    margin-bottom: 12px
+    &--section
+        .contentImageBlock__content__inner
+            max-width: 340px
+            margin-left: 0
+            +max-screen($breakpoint-md)
+                
+

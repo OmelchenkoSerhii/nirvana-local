@@ -1,0 +1,236 @@
+.booking
+    min-height: calc(100vh - 100px)
+    background: #fff
+    color: $color-dark
+    display: flex
+    +max-screen(1200px)
+        flex-wrap: wrap
+    &-heading
+      padding-bottom: 30px
+      position: relative
+      z-index: 5
+    &__col
+        &-sidebar
+            max-width: 320px
+            width: 100%
+            flex-shrink: 2
+            padding: 35px
+            padding-top: 135px
+            order: 1
+            .page-template-template-api-booking-type & , .page-template-template-api-book &
+              //padding-top: 135px
+        &-content
+            position: relative
+            background: transparentize(#003CC7, 0.96)
+            width: 100%
+            padding: 30px 20px
+            padding-top: 135px
+            overflow: hidden
+            order: 2
+            .page-template-template-api-booking-type & , .page-template-template-api-book &
+              //padding-top: 135px
+            .page-template-template-api-book &
+              overflow: initial
+            +max-screen($breakpoint-lg)
+                padding-top: 140px
+            +max-screen($breakpoint-sm)
+                padding-top: 100px
+        &-summary
+            position: relative
+            z-index: 999
+            order: 4
+    &__title
+        font-size: 25px
+        line-height: 1.2em
+        font-weight: 700px
+        padding-bottom: 35px
+
+.header-booking#header
+    position: absolute
+    top: var(--wp-admin--admin-bar--height, 0)
+    left: 0
+    background: #fff
+    box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.05)
+    +max-screen(1100px)
+      position: fixed
+    .header-active &
+      z-index: 9999
+    & ~ #main
+      padding-top: var(--wp-admin--admin-bar--height, 0)
+    .header
+        padding-top: 0px!important
+        padding-bottom: 0px!important
+        display: flex
+        align-items: center
+        justify-content: flex-start
+    .header-booking 
+        &__logo
+            padding: 32px 35px
+            padding-left: 50px
+            min-width: 320px
+            width: 320px
+            border-right: 1px solid transparentize(#003CC7, 0.98)
+            +max-screen(1200px)
+              min-width: 200px
+              width: 200px
+            .header__logo
+                width: 150px
+                max-width: 100%
+        &__main
+            width: 100%
+            max-width: calc(100vw - 630px)
+            padding: 32px 18px
+            +max-screen(1440px)
+              max-width: 100%
+            +max-screen($breakpoint-lg)
+              order: 3
+              padding: 0
+            +max-screen($breakpoint-sm)
+           
+    .nav-toggle
+      visibility: hidden
+      opacity: 0
+      margin-left: auto
+      margin-right: 50px
+      transition: $default-transition
+      z-index: 9999
+      .nav-toggle-icon:after, .nav-toggle-icon:before, .nav-toggle-icon__inner
+        background-color: black
+      +max-screen(1200px)
+        visibility: visible
+        opacity: 1
+        display: block
+      +max-screen($breakpoint-sm)
+          margin-right: 30px
+
+.header-booking
+    &__main
+      &__title
+        font-size: 34px
+        line-height: 1em
+        color: $color-dark
+        font-weight: 700
+        text-transform: uppercase
+        +max-screen($breakpoint-md)
+          font-size: 28px
+      &__accom
+        .button-back
+            width: 50px
+            height: 50px
+            padding: 20px 15px
+            img
+                transition: $default-transition
+            &:hover
+                img, svg
+                    filter: invert(1)
+      .button
+          &:hover
+              svg
+                  rect
+                      stroke: #fff
+    &__type
+      border-bottom: 2px solid $color-light-orange
+      margin-bottom: 15px
+      &__list
+        align-items: flex-end
+      &__item
+        padding: 10px 10px
+        transition: 0.3s
+        border-radius: 10px 10px 0 0
+        background: $color-dark
+        border: 2px solid $color-dark
+        border-bottom: 0px solid $color-dark
+       
+        &.active
+          padding: 10px 10px
+          background: $color-light-orange
+          border: 2px solid $color-light-orange
+          border-bottom: 0px solid $color-light-orange
+          border-radius: 10px 10px 0 0
+          .header-booking__type__item__link
+            padding-top: 10px
+          .header-booking__type__item__title
+            color: #fff
+          .header-booking__type__item__image
+            background: #fff
+        &__title
+          color: #fff
+        &__link
+          //padding: 12px 0
+          display: flex
+          align-items: center
+          color: $color-dark 
+          font-weight: 600
+          font-size: 12px
+          line-height: 12px
+          text-transform: uppercase
+          font-family: $font-family-base
+          transition: 0.3s
+        &__image
+          position: relative
+          width: 36px
+          min-width: 36px
+          height: 36px
+          margin-right: 10px
+          border-radius: 50%
+          overflow: hidden
+          transition: 0.3s
+          background: #fff
+          +max-screen($breakpoint-sm)
+            width: 20px
+            min-width: 20px
+            height: 20px
+          img
+            position: absolute
+            top: 15%
+            left: 15%
+            width: 70%
+            height: 70%
+            object-fit: contain      
+
+.button--booking-summary
+  position: fixed
+  top: 50%
+  transform: translate(calc(100vw - 78px), -50%) rotate(90deg)
+  left: 0
+  padding: 15px 20px
+  height: max-content
+  transition: $default-transition
+  &.hidden
+    transform: translate(calc(100vw - 78px - 310px), -50%) rotate(90deg)
+
+.booking__col-sidebar
+  +max-screen(1200px)
+    position: fixed
+    left: 0
+    top: 0
+    transform: translateX(-100%)
+    z-index: 100
+    background-color: $color-bg-light
+    height: 200vh
+    transition: $default-transition
+    padding-top: 160px
+    .header-active &
+      transform: translateX(0)
+  +max-screen(1100px)
+    display: none
+  +max-screen($breakpoint-md)
+    padding-top: 180px
+  +max-screen($breakpoint-sm)
+    padding-top: 220px
+
+.header-booking#header .header
+  +max-screen($breakpoint-lg)
+    flex-wrap: wrap
+    .header-booking__main
+      width: 100%
+
+.header-booking#header .header-booking__logo
+  +max-screen($breakpoint-md)
+    min-width: unset
+    width: max-content
+    padding-left: 30px
+  +max-screen($breakpoint-sm)
+    padding-top: 20px
+    padding-bottom: 20px
+

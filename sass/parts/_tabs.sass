@@ -1,0 +1,74 @@
+.tabs
+    &__item
+        display: none
+        +max-screen($breakpoint-md)
+            //display: block
+            margin-top: 16px
+        &.active
+            display: block
+            .fade-up
+                opacity: 1
+                transform: translateY(0)
+        &__title
+            +max-screen($breakpoint-md)
+                margin-bottom: 15px
+        &__header
+            position: relative
+            border-top: 2px solid $color-primary
+            border-bottom: 2px solid $color-primary
+            transition: 0.3s
+            padding: 24px
+            padding-right: 50px
+            .tabs__item--active &
+                background-color: $color-primary
+            &:after
+                content: ''
+                display: block
+                width: 12px
+                height: 6px
+
+                position: absolute
+                right: 20px
+                top: 50%
+                margin-top: -3px
+                opacity: 1
+
+                transition: transform .25s ease
+                background-size: contain
+                background-position: center
+                background-repeat: no-repeat
+                background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L7 7L1 1' stroke='%23EC7E49' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+
+            .tabs__item--active &:after
+                transform: rotate(-180deg)
+
+        &__content
+            display: block
+            +max-screen($breakpoint-md)
+                display: none
+                padding: 40px 0
+
+.tabsNav
+    &__item
+        display: block
+        margin-bottom: 10px
+        &__link
+            display: block
+            padding-top: 16px
+            padding-left: 20px
+            padding-right: 60px
+            padding-bottom: 16px
+            background-color: #1B1D3B
+            position: relative
+            color: white
+            &.active
+                background-color: white
+                color: #1E2243
+            svg
+                position: absolute
+                top: 50%
+                transform: translateY(-46%)
+                right: 20px
+.tabs-section
+    .tabs.row
+        justify-content: center

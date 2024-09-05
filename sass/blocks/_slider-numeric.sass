@@ -1,0 +1,35 @@
+.slider--numeric
+    &__numbers
+        .slick-track
+            display: flex
+            align-items: center
+        .slick-slide
+            transition: $default-transition
+            opacity: .25
+            h3
+                font-size: 40px
+                line-height: normal
+                text-align: center
+                +max-screen($breakpoint-xs)
+                    font-size: calcFluidSize(25, 40, 320, $breakpoint-xs)
+            &.slick-current
+                opacity: 1
+                h3
+                    font-size: 52px
+                    +max-screen($breakpoint-xs)
+                        font-size: calcFluidSize(30, 52, 320, $breakpoint-xs)
+            &:not(.slick-current)
+                &:hover
+                    opacity: 0.5
+                h3
+                    cursor: pointer
+    .slick-arrow
+        width: 57px
+        height: 57px
+        &::after
+            flex-shrink: 0
+            margin-left: 0
+
+    &__content
+        h3
+            margin-bottom: 30px

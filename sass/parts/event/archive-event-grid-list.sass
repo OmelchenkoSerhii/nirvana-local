@@ -1,0 +1,37 @@
+.event-grid-list
+    border-bottom: $default-border
+    &__list
+       
+    &__item
+        position: relative
+        display: flex
+        
+     
+        &-inner
+            width: 100%
+            padding-bottom: 75%
+            position: relative
+            border: 1px solid transparentize(#FFFFFF, 0.5)
+            transition: $default-transition
+            font-weight: 700
+            font-size: 30px
+            &:hover
+                background-color: $color-light-orange
+            img
+                position: absolute
+                top: 15%
+                left: 15%
+                width: 70%
+                height: 70%
+                object-fit: contain
+        &-name
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            padding: 15px
+

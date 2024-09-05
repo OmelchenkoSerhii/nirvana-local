@@ -1,0 +1,246 @@
+.popup-block
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 1000
+    &__background
+        position: absolute
+        width: 100vw
+        height: 100vh
+        left: 0
+        top: 0
+        background: transparentize($color-bg-dark, 0.4)
+    &__inner
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: 100%
+        z-index: 1001
+        overflow: auto
+    &__wrapper
+        position: relative
+        max-height: 80vh
+        max-width: 550px
+        .videoBlock &
+            max-width: 920px
+    &__container
+        +max-screen($breakpoint-sm)
+            padding-left: 30px
+            padding-right: 30px
+    &__content
+        max-height: 100%
+        overflow: auto
+        position: relative
+        border-radius: 10px
+        background-color: $color-bg-light
+        .videoBlock__video.video--oembed
+            &>div:not(.plyr)
+                padding-bottom: 56%
+    &__close
+        position: absolute
+        top: 1px
+        right: 1px
+        width: 48px
+        height: 48px
+        background-color: $color-bg-light
+        cursor: pointer
+        z-index: 3
+        transition: 0.3s
+        z-index: 100
+        display: flex
+        align-items: center
+        justify-content: center
+        +max-screen($breakpoint-md)
+            width: 35px
+            height: 35px
+            top: 1px
+            right: 1px
+        &:hover
+            // transform: rotate(90deg)
+            &::before
+                transform: translateY(-50%) rotate(-45deg)
+            &::after
+                transform: translateY(-50%) rotate(45deg)
+        &::before, &::after
+            content: ''
+            background: $color-bg-dark
+            height: 2px
+            width: 9px
+            position: absolute
+            transition: 0.3s
+        &::before
+            transform: translateY(-50%) rotate(45deg)
+        &::after
+            transform: translateY(-50%) rotate(-45deg)
+
+.popup-hotel-location
+    .popup-block__container
+        max-width: 1370px !important
+        max-height: 100vh
+        padding-top: 55px
+        padding-bottom: 55px
+    &__image-wrapper
+        position: relative
+        > img
+            object-fit: cover
+            max-height: 220px
+        .icon-bookmark
+            position: absolute
+            top: 0
+            right: 20px
+
+.popup-accom-reserve
+    .container
+        max-width: 650px
+    &__list
+    &__item
+        &-inner
+            border: 1px solid #000C26
+            border-radius: 5px
+        &-title
+            font-weight: bold
+    &__icon
+        width: 100px
+        height: 100px
+        position: relative
+        display: inline-block
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+    .popup-block__footer
+        background-color: transparentize($color-blue, 0.96)
+        display: flex
+        margin-right: -10px
+        margin-left: -10px
+        a
+            width: 50%
+            margin-left: 10px
+            margin-right: 10px
+
+.popup-extra
+    .container
+        max-width: 450px
+
+    &__list
+
+    &__icon
+        width: 60px
+        height: 60px
+        position: relative
+        display: inline-block
+        margin-bottom: 25px
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+    &--insurance
+        .container
+            max-width: 650px
+    &__buttons
+        margin: -5px
+        span
+            display: block
+            width: 50%
+            min-width: 50%
+            padding: 5px
+            a
+                width: 100%
+                cursor: pointer
+
+.popup-special-flight
+    .container
+        max-width: 650px
+    .popup-block__close
+        right: 20px
+        top: 20px
+        background-color: transparentize($color-blue, 0.96)
+        &::before, &::after
+            width: 12px
+    .content-block
+        a
+            text-decoration: none
+
+.popup-select-flight
+    &__inner
+        display: block
+    &__container
+        max-width: 720px
+        margin-left: auto
+        display: flex
+        height: 100%
+    &__slider
+        background-color: transparentize($color-blue, 0.96)
+        &-item
+            padding: 0 10px
+    .slider-arrows
+        .button--arrow
+            position: initial
+            width: 35px
+            height: 35px
+            display: flex
+            &::after
+                width: 11px
+                height: 11px
+                margin-left: auto
+                background-repeat: no-repeat
+            &.slick-disabled
+                background-color: transparentize($color-bg-dark, 0.8)
+                border-color: transparentize($color-bg-dark, 0.8)
+                &::after
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.45 7.3L2.25 11.5L1.2 10.45L5.4 6.25L1.2 2.05L2.25 1L6.45 5.2L7.5 6.25L6.45 7.3Z' fill='%23000C26'/%3E%3Cpath d='M2.25 11.5L2.49749 11.7475L2.25 11.995L2.00251 11.7475L2.25 11.5ZM1.2 10.45L0.952512 10.6975L0.705025 10.45L0.952512 10.2025L1.2 10.45ZM5.4 6.25L5.64749 6.00251L5.89497 6.25L5.64749 6.49749L5.4 6.25ZM1.2 2.05L0.952512 2.29749L0.705025 2.05L0.952512 1.80251L1.2 2.05ZM2.25 1L2.00251 0.752513L2.25 0.505026L2.49749 0.752513L2.25 1ZM7.5 6.25L7.74749 6.00251L7.99497 6.25L7.74749 6.49749L7.5 6.25ZM2.00251 11.2525L6.20251 7.05251L6.69749 7.54749L2.49749 11.7475L2.00251 11.2525ZM1.44749 10.2025L2.49749 11.2525L2.00251 11.7475L0.952512 10.6975L1.44749 10.2025ZM5.64749 6.49749L1.44749 10.6975L0.952512 10.2025L5.15251 6.00251L5.64749 6.49749ZM1.44749 1.80251L5.64749 6.00251L5.15251 6.49749L0.952512 2.29749L1.44749 1.80251ZM2.49749 1.24749L1.44749 2.29749L0.952512 1.80251L2.00251 0.752513L2.49749 1.24749ZM6.20251 5.44749L2.00251 1.24749L2.49749 0.752513L6.69749 4.95251L6.20251 5.44749ZM7.25251 6.49749L6.20251 5.44749L6.69749 4.95251L7.74749 6.00251L7.25251 6.49749ZM6.20251 7.05251L7.25251 6.00251L7.74749 6.49749L6.69749 7.54749L6.20251 7.05251Z' fill='%23000C26'/%3E%3C/g%3E%3C/svg%3E%0A")
+    .popup-block
+        &__close
+            position: relative
+            width: 50px
+            height: 50px
+            background-color: transparentize($color-blue, 0.96)
+            margin-left: auto
+            &::before,
+            &::after
+                width: 12px
+        &__content
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+.popup-block__content
+    .order-form
+        &__row
+            .order-form__field
+                width: 50%
+        .order-form__field
+            input
+                background-color: #fff!important
+                border: 1px solid #000c26!important
+                font-size: 15px!important
+                line-height: normal
+                font-family: Chivo,sans-serif
+                padding: 20px!important
+                height: 57px!important
+                color: #000c26!important
+                outline: none
+                border-radius: 0
+            input[type=textarea]
+                min-height: 150px
+            label
+                font-size: 14px
+                line-height: normal
+                text-transform: uppercase
+                font-weight: 700
+                color: #000c26
+    .order-form__title
+        text-transform: uppercase
+        font-size: 30px
+        font-weight: 900
+        text-transform: uppercase
+        color: #000c26
+            
+.popup-notify
+  .popup-block__container
+    max-width: 900px

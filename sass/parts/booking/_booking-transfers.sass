@@ -1,0 +1,31 @@
+.transfer-card
+    background: #FFFFFF
+    box-shadow: 0px 5px 10px rgba(0, 12, 38, 0.05)
+    border-radius: 10px
+    &__price
+        margin-left: 20px
+        font-size: 20px
+        margin-top: 6px
+        span
+            opacity: 0.25
+    &__info
+        width: 100%
+        display: block
+        &__row
+            font-size: 16px
+            text-transform: uppercase
+        &__item
+            &-data
+                min-width: 25%
+                width: 25%
+                text-align: center
+                justify-content: center
+            &-splitter
+                width: 100%
+                height: 1px
+                background: $color-light-orange
+                position: relative
+                text-align: center
+    &__travellers-list
+        display: flex
+        flex-wrap: wrap
