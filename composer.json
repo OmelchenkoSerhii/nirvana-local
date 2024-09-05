@@ -1,0 +1,10 @@
+{
+    "config": {
+        "platform": {
+            "php": "8.0.29"
+        }
+    },
+    "require": {
+        "league/csv": "^9.8"
+    }
+}
